@@ -1,0 +1,353 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GLOBAL */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= NAVBAR ================= */
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-bar a {
+    font-weight: 700;
+    color: #111;
+}
+
+.mid-navbar {
+    display: flex;
+    gap: 40px;
+}
+
+.resume-navoption button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.resume-navoption button a {
+    color: white;
+}
+
+/* ================= HERO – ABOUT ME ================= */
+
+.aboutme {
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.aboutme-mainsection {
+    flex: 1;
+    max-width: 550px;
+}
+
+.aboutme-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.aboutme-links a {
+    border: 2px solid black;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.aboutme-links a:hover {
+    background: black;
+    color: white;
+}
+
+.img img {
+    width: 320px;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* ================= ABOUT SECTION ================= */
+
+.aboutme-section {
+    display: flex;
+    padding: 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.aboutme-content {
+    max-width: 600px;
+}
+
+/* ================= SKILLS ================= */
+
+.myskills-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 25px;
+    padding: 60px;
+    
+}
+.section-title{
+    text-align:center;
+    margin-top:50px;
+    
+}
+#skills{
+    padding:70px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border:2px solid black;
+    padding:20px;
+}
+.skill:hover{
+    background-color:black;
+    color:white;
+}
+.skill i {
+    font-size: 40px;
+}
+
+.skill span {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.experience-section {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+  
+    
+}
+
+.experience-card {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/* ================= PROJECTS ================= */
+
+.myprojects-section {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.project1,
+.project3 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.project2 {
+    display:flex;
+    flex-direction: row-reverse;
+    align-items:center;
+    gap:20px;
+}
+
+.project1 img,
+.project3 img,
+.project2 img {
+    width: 300px;
+    border-radius: 12px;
+    min-height:5vh
+}
+
+.content {
+    padding: 20px;
+    max-width: 500px;
+}
+
+/* ================= TESTIMONIALS ================= */
+
+.activities-section {
+    display: flex;
+
+    justify-content: center;
+    align-items:center;
+    gap: 20px;
+    padding: 60px;
+    
+}
+.activity-header img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.activities-card {
+    border: 2px solid black;
+    padding: 25px;
+    min-width: 20vw;
+    border-radius: 10px;
+}
+
+/* ================= CONTACT ================= */
+
+.contactme-section {
+    display: flex;
+    padding: 60px;
+    gap: 60px;
+    margin-top:200px;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+.contactme-form input,
+.contactme-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.contactme-form button {
+    margin-top: 20px;
+    padding: 12px;
+    background: black;
+    color: white;
+    border: none;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: black;
+    color: white;
+    padding: 20px;
+    
+    display:flex;
+    flex-direction:row-reverse;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .aboutme,
+    .aboutme-section,
+    .activities-section,
+    .myprojects-section,
+
+    .contactme-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img img {
+        width: 250px;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .testimonial1 {
+        flex-direction: column;
+    }
+
+    .project1,
+    .project2 {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav-bar {
+        padding: 20px;
+    }
+
+    .mid-navbar {
+        gap: 15px;
+    }
+
+    .myskills-section {
+        padding: 20px;
+    }
+}
+
+/* === FIXED NAVBAR === */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+body {
+    padding-top: 50px; /* Same as navbar height */
+}
+
+/* === FULL PAGE SCROLLING === */
+html, body {
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    
+}
+
+section {
+    height: calc(100vh - 100px); /* Fits under fixed navbar */
+    scroll-snap-align: start;
+}
+
+
