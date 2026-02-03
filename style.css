@@ -287,14 +287,18 @@ section {
 
 /* ================= FOOTER ================= */
 
+main {
+    flex: 1;   /* pushes footer to the bottom */
+}
+
 footer {
     background: black;
     color: white;
     padding: 20px;
-    
-    display:flex;
-    flex-direction:row-reverse;
+    display: flex;
+    flex-direction: row-reverse;
 }
+
 
 /* ================= RESPONSIVE ================= */
 
