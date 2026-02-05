@@ -144,36 +144,35 @@ a, button {
         font-size: clamp(10px, 2vw, 12px);
     }
 }
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .nav-bar {
-        padding: 0.8rem;
+        padding: 1rem;
+        flex-wrap: nowrap;
     }
     .nav-bar a.home-navoption {
     font-weight: 700;
-  font-size: clamp(12px, 2vw, 20px);
+  font-size: clamp(15px, 2.5vw, 22px);
     flex-shrink: 0;
     outline:none;
     color:rgb(55, 52, 52);
    
 }
-    
+
     .mid-navbar {
-        gap: clamp(5px, 1.5vw, 10px);
+        gap: clamp(8px, 2vw, 15px);
+        flex-shrink: 1;
     }
 
     .mid-navbar a {
-        font-size: clamp(10px, 2vw, 12px);
-        padding: 4px 6px;
-        
+        font-size: clamp(11px, 2.5vw, 13px);
+        padding: 6px 8px;
     }
 
     .resume-navoption button {
-        padding: 5px 8px;
-        font-size: clamp(9px, 1.8vw, 11px);
+        padding: 6px 10px;
+        font-size: clamp(10px, 2vw, 12px);
     }
 }
-
 @media (max-width: 320px) {
     .nav-bar {
         padding: 0.5rem;
@@ -412,8 +411,8 @@ a, button {
     }
     
     .img img {
-        width: clamp(150px, 40vw, 180px);
-        height: clamp(150px, 40vw, 180px);
+        width: clamp(10px, 40vw, 180px);
+        height: clamp(50px, 40vw, 180px);
     }
 
     .aboutme-links a {
@@ -1658,16 +1657,12 @@ section {
 
 @media (min-width: 321px) and (max-width: 480px) {
     /* Small phones */
-    .nav-bar {
-        padding: 0.8rem;
-    }
+    
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
     /* Large phones / small tablets */
-    .nav-bar {
-        padding: 1rem;
-    }
+  
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
