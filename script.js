@@ -136,3 +136,6 @@ window.addEventListener('load', function() {
         animateContent(firstSection);
     }
 });
+
+
+ document.getElementById("year").textContent = new Date().getFullYear();
