@@ -203,12 +203,12 @@ button {
     }
 
     .mid-navbar {
-        gap: clamp(3px, 1.0vw, 5px);
+        gap: clamp(3px, 1.0vw, 4px);
     }
 
     .mid-navbar a {
-        font-size: clamp(8px, 1vw, 6px);
-        padding: 1px px;
+        font-size: clamp(7px, 1vw, 10px);
+        padding: 2px 2px;
 
     }
     .resume-download i{
@@ -790,7 +790,7 @@ button {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     flex: 0 0 clamp(120px, 60vw, 400px);
-    min-height: clamp(280px, 35vw, 300px);
+    min-height: clamp(20px, 35vw, 300px);
     border-radius: 16px;
     padding: clamp(20px, 4vw, 30px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -817,14 +817,6 @@ button {
     color: #222;
 }
 
-.experience-img {
-    width: clamp(100%, 30vw, 100px);
-
-    object-fit: cover;
-    border-radius: 16px;
-
-    border: 3px solid rgba(255, 255, 255, 0.3);
-}
 
 .experience-card .date {
    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
@@ -840,7 +832,7 @@ button {
 
 .experience-card p {
     
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     line-height: 1.5;
     color: #555;
     flex-grow: 1;
@@ -953,12 +945,7 @@ button {
     width: 100%;
     padding-top: 100px;
 
-
-
 }
-
-
-
 
 .myprojects-section .section-title {
     text-align: center;
@@ -968,8 +955,7 @@ button {
 }
 
 .project1,
-.project2,
-.project3 {
+.project2 {
     display: flex;
     align-items: center;
     gap: clamp(30px, 6vw, 50px);
@@ -1865,6 +1851,7 @@ button {
         border: 1px solid black;
 
     }
+   
 
 
 }
