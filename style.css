@@ -187,10 +187,10 @@ button {
 
 
 
+
 /* ================= HERO – ABOUT ME ================= */
 #home {
     background: linear-gradient(135deg, white 0%, white 100%);
-
 }
 
 .aboutme {
@@ -203,7 +203,6 @@ button {
     margin: 0 auto;
     width: 100%;
 }
-
 
 .aboutme-mainsection {
     flex: 1;
@@ -266,21 +265,11 @@ button {
     border: 4px solid rgba(255, 255, 255, 0.8);
 }
 
-
-
-
-
 /* Mobile responsive */
 @media (max-width: 768px) {
     .aboutme {
-        padding: clamp(20px, 4vw, 40px);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         gap: clamp(30px, 6vw, 60px);
-        max-width: 1200px;
-        padding-top: 100px;
-        width: 100%;
+        padding-top: 100px;  
     }
 
     .aboutme-mainsection {
@@ -304,95 +293,29 @@ button {
 @media (max-width: 600px) {
 
     .aboutme {
-        padding: clamp(10px, 4vw, 40px);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: clamp(15px, 2vw, 20px);
         padding: clamp(15px, 4vw, 25px);
-        gap: clamp(25px, 5vw, 35px);
-
-        margin: 0 auto;
-        width: 100%;
+        gap: clamp(25px, 5vw, 35px);   
     }
-
-
     .aboutme-mainsection {
-        flex: 1;
         padding: clamp(15px, 4vw, 25px);
         gap: clamp(25px, 5vw, 35px);
 
     }
-
-    .aboutme-mainsection h1 {
-
-        font-size: clamp(2.5rem, 6vw, 4rem);
-        margin-bottom: clamp(0.5rem, 2vw, 1rem);
-        line-height: 1.1;
-        font-weight: 800;
-    }
-
-    .aboutme-mainsection h2 {
-        font-size: clamp(1.3rem, 3.5vw, 2.2rem);
-        color: #666;
-        margin-bottom: clamp(1rem, 3vw, 1.5rem);
-        font-weight: 600;
-    }
-
-    .aboutme-mainsection p {
-        font-size: clamp(1rem, 2.2vw, 1.3rem);
-        line-height: 1.6;
-        color: #555;
-        margin-bottom: clamp(1.5rem, 3vw, 2rem);
-    }
-
-    .aboutme-links {
-        display: flex;
-        gap: clamp(10px, 2vw, 15px);
-        flex-wrap: wrap;
-    }
-
-    .aboutme-links a {
-        border: 2px solid black;
-        padding: clamp(8px, 1.5vw, 12px) clamp(10px, 2vw, 14px);
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        font-size: clamp(16px, 3vw, 20px);
-    }
-
-    .aboutme-links a:hover {
-        background: black;
-        color: white;
-        transform: translateY(-2px);
-    }
-
-
 
     .img img {
         width: clamp(200px, 30vw, 300px);
         height: clamp(200px, 30vw, 300px);
-        object-fit: cover;
-        border-radius: 50%;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        border: 4px solid rgba(255, 255, 255, 0.8);
     }
-
-
 }
-
-
-
 
 
 @media (max-width: 500px) {
     .aboutme-mainsection h1 {
-
         font-size: clamp(1rem, 2vw, 1.8rem);
     }
 
     .aboutme-mainsection h2 {
         font-size: clamp(0.6rem, 3vw, 0.8rem);
-
     }
 
     .aboutme-mainsection p {
@@ -405,25 +328,18 @@ button {
     }
 
     .aboutme-links a {
-
         border: 1px solid black;
         padding: clamp(4px, 0.5vw, 8px) clamp(5px, 1vw, 7px);
         border-radius: 4px;
-        transition: all 0.3s ease;
         font-size: clamp(10px, 2vw, 10px);
     }
-
     .aboutme-links {
-        display: flex;
         gap: clamp(4px, 1vw, 8px);
-        flex-wrap: wrap;
     }
 }
 
 
-
 @media (max-width: 320px) {
-
     .aboutme-mainsection p {
         font-size: clamp(0.4rem, 1.5vw, 0.7rem);
     }
@@ -436,17 +352,12 @@ button {
     }
 
     .aboutme-links a {
-
         font-size: 10px;
     }
 
     .aboutme-links {
-        display: flex;
         gap: clamp(4px, 1vw, 8px);
-        flex-wrap: wrap;
     }
-
-
 }
 
 /* ================= ABOUT SECTION ================= */
