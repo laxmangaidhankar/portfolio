@@ -11,7 +11,7 @@ body {
     color: #222;
     line-height: 1.5;
     overflow-x: hidden;
-     min-width: 320px;
+    min-width: 320px;
 }
 
 a {
@@ -112,11 +112,7 @@ button {
     }
 
     .nav-bar a.home-navoption {
-        font-weight: 700;
         font-size: clamp(15px, 2.5vw, 22px);
-        flex-shrink: 0;
-        outline: none;
-        color: rgb(55, 52, 52);
     }
 
     .mid-navbar {
@@ -130,17 +126,7 @@ button {
     }
 
     .resume-download {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: #000000;
-        color: white;
         padding: 5px 10px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: 0.3s ease;
     }
 }
 
@@ -148,14 +134,8 @@ button {
     .nav-bar {
         padding: 0.5rem;
     }
-
     .nav-bar a.home-navoption {
-        font-weight: 700;
         font-size: clamp(10px, 1.5vw, 18px);
-        flex-shrink: 0;
-        outline: none;
-        color: rgb(55, 52, 52);
-
     }
 
     .mid-navbar {
@@ -174,32 +154,21 @@ button {
     font-size: clamp(7px, 1vw, 10px);
     }
     .resume-download {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: #000000;
-        color: white;
         padding: 1px 3px;
         border-radius: 6px;
-        text-decoration: none;
         font-weight: 600;
         font-size: 0.6rem;
-        transition: 0.3s ease;
     }
 }
 
+
+/* 1. Extra-small phones (240px–360px) */
 @media (max-width: 360px) {
     .nav-bar {
-        padding: 0.5rem;
+        padding: 1rem;
     }
-
     .nav-bar a.home-navoption {
-        font-weight: 700;
         font-size: clamp(10px, 1.5vw, 18px);
-        flex-shrink: 0;
-        outline: none;
-        color: rgb(55, 52, 52);
-
     }
 
     .mid-navbar {
@@ -209,13 +178,11 @@ button {
     .mid-navbar a {
         font-size: clamp(7px, 1vw, 10px);
         padding: 2px 2px;
-
-    }
-    .resume-download i{
-        font-size:10px;
     }
 
-    
+    .resume-download i {
+        font-size: 10px;
+    }
 }
 
 
@@ -315,6 +282,7 @@ button {
         padding-top: 100px;
         width: 100%;
     }
+
     .aboutme-mainsection {
         max-width: 100%;
         order: 2;
@@ -357,7 +325,7 @@ button {
     }
 
     .aboutme-mainsection h1 {
-        
+
         font-size: clamp(2.5rem, 6vw, 4rem);
         margin-bottom: clamp(0.5rem, 2vw, 1rem);
         line-height: 1.1;
@@ -398,16 +366,16 @@ button {
         transform: translateY(-2px);
     }
 
-    
+
 
     .img img {
-    width: clamp(200px, 30vw, 300px);
-    height: clamp(200px, 30vw, 300px);
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    border: 4px solid rgba(255, 255, 255, 0.8);
-}
+        width: clamp(200px, 30vw, 300px);
+        height: clamp(200px, 30vw, 300px);
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        border: 4px solid rgba(255, 255, 255, 0.8);
+    }
 
 
 }
@@ -418,7 +386,7 @@ button {
 
 @media (max-width: 500px) {
     .aboutme-mainsection h1 {
-        
+
         font-size: clamp(1rem, 2vw, 1.8rem);
     }
 
@@ -468,7 +436,7 @@ button {
     }
 
     .aboutme-links a {
-       
+
         font-size: 10px;
     }
 
@@ -478,7 +446,7 @@ button {
         flex-wrap: wrap;
     }
 
-    
+
 }
 
 /* ================= ABOUT SECTION ================= */
@@ -522,8 +490,8 @@ button {
 }
 
 .aboutme-content p {
-   
-        font-size: clamp(1rem, 2.2vw, 1.3rem);
+
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
 
     line-height: 1.6;
     color: rgb(0, 0, 0);
@@ -553,7 +521,7 @@ button {
         border: 3px solid rgba(255, 255, 255, 0.3);
     }
 
-    
+
 }
 
 
@@ -568,9 +536,11 @@ button {
     .aboutme-content {
         max-width: 100%;
     }
-    .aboutme-content h1 {  
+
+    .aboutme-content h1 {
         font-size: clamp(1rem, 2vw, 1.8rem);
     }
+
     .profile-img img {
         width: clamp(150px, 20vw, 250px);
         height: clamp(200px, 25vw, 300px);
@@ -707,10 +677,12 @@ button {
     .myskills-section {
         grid-template-columns: repeat(3, 1fr);
         gap: 12px;
-    }  
-    .section-title {
-    font-size: clamp(1rem, 2vw, 1.8rem);
     }
+
+    .section-title {
+        font-size: clamp(1rem, 2vw, 1.8rem);
+    }
+
     .skill {
         padding: 12px;
     }
@@ -725,13 +697,15 @@ button {
 }
 
 
-@media (max-width:320px){
-    .skill i{
-        font-size:10px;
+@media (max-width:320px) {
+    .skill i {
+        font-size: 10px;
     }
-    .skill span{
+
+    .skill span {
         font-size: clamp(0.4rem, 1.5vw, 0.7rem);
     }
+
     .myskills-section {
         grid-template-columns: repeat(4, 1fr);
         gap: 12px;
@@ -765,7 +739,7 @@ button {
     padding: clamp(10px, 2vw, 20px) 0;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-        line-height: 1.8;
+    line-height: 1.8;
 
 }
 
@@ -799,7 +773,7 @@ button {
     flex-direction: column;
     justify-content: flex-start;
     border: 1px solid rgba(255, 255, 255, 0.3);
-      line-height: 1.8;
+    line-height: 1.8;
 }
 
 .experience-card:hover {
@@ -808,36 +782,36 @@ button {
 }
 
 .experience-card h2 {
-    
+
     font-size: clamp(1.3rem, 3.5vw, 2.2rem);
     margin-bottom: clamp(10px, 2vw, 15px);
     font-weight: 700;
     line-height: 1.3;
-    
+
     color: #222;
 }
 
 
 .experience-card .date {
-   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     margin-bottom: clamp(2px, 1vw, 2px);
     color: #4facfe;
     text-align: center;
     font-weight: 600;
     text-transform: uppercase;
-      line-height: 1;
+    line-height: 1;
     letter-spacing: 0.5px;
-      margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 .experience-card p {
-    
+
     font-size: clamp(0.9rem, 2.5vw, 1rem);
     line-height: 1.5;
     color: #555;
     flex-grow: 1;
-      line-height: 1.8;
-      margin-bottom:10px;
+    line-height: 1.8;
+    margin-bottom: 10px;
 }
 
 .experience-card {
@@ -894,9 +868,9 @@ button {
     }
 
     .experience-card p {
-    
-     font-size: clamp(0.7rem, 1.5vw, 0.4rem);
-    
+
+        font-size: clamp(0.7rem, 1.5vw, 0.4rem);
+
     }
 }
 
@@ -908,26 +882,27 @@ button {
     }
 
     .experience-card h2 {
-       font-size: clamp(0.5rem, 2vw, 1rem);
+        font-size: clamp(0.5rem, 2vw, 1rem);
     }
 
     .experience-card p {
         font-size: clamp(0.4rem, 0.5vw, 0.8rem);
     }
+
     .card-link-icon {
-    font-size: 10px;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
+        font-size: 10px;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
 
-}
-
-@media(max-width:320px){
-    .experience-card {
-        flex: 0 0 clamp(150px, 60vw, 200px);
-        min-height: clamp(100px, 20vw, 150px);
-        padding: 18px;
     }
-}
+
+    @media(max-width:320px) {
+        .experience-card {
+            flex: 0 0 clamp(150px, 60vw, 200px);
+            min-height: clamp(100px, 20vw, 150px);
+            padding: 18px;
+        }
+    }
 }
 
 
@@ -1017,9 +992,9 @@ button {
 }
 
 .content h2 {
-    
-     font-size: clamp(1.3rem, 3.5vw, 2.2rem);
-   
+
+    font-size: clamp(1.3rem, 3.5vw, 2.2rem);
+
     color: #222;
     line-height: 1.2;
     font-weight: 800;
@@ -1115,7 +1090,7 @@ button {
 
     .content h2 {
         font-size: clamp(1rem, 3vw, 2rem);
-       
+
         color: #222;
         line-height: 1.2;
         font-weight: 800;
@@ -1143,7 +1118,7 @@ button {
 
     .content h2 {
         font-size: clamp(0.5rem, 1.5vw, 1.2rem);
-       
+
         color: #222;
         line-height: 1.2;
         font-weight: 800;
@@ -1208,7 +1183,7 @@ button {
 
     .content h2 {
         font-size: clamp(1rem, 2.5vw, 1.2rem);
-        
+
         color: #222;
         line-height: 1.2;
         font-weight: 800;
@@ -1277,7 +1252,7 @@ button {
 
     .content h2 {
         font-size: clamp(0.5rem, 2vw, 1rem);
-        
+
         color: #222;
         line-height: 1.2;
         font-weight: 800;
@@ -1359,15 +1334,15 @@ button {
     }
 
     .content p {
-        
-          font-size: clamp(0.4rem, 0.5vw, 0.8rem);
+
+        font-size: clamp(0.4rem, 0.5vw, 0.8rem);
         line-height: 1.6;
         color: #333;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
 
-    .project-links i{
-        font-size:10px;
+    .project-links i {
+        font-size: 10px;
     }
 
 
@@ -1532,7 +1507,7 @@ button {
 }
 
 .contactme-special h1 {
-    
+
     font-size: clamp(2.5rem, 6vw, 4rem);
     margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
     color: #222;
@@ -1611,16 +1586,16 @@ button {
     .contactme-special {
         max-width: 100%;
     }
-    
 
 
-.contact-info p {
-    font-size: clamp(0.9rem, 2.2vw, 1.2rem);
-    margin: 10px 0;
-    text-align: justify;
-    text-justify: inter-word;
 
-}
+    .contact-info p {
+        font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+        margin: 10px 0;
+        text-align: justify;
+        text-justify: inter-word;
+
+    }
 }
 
 
@@ -1653,9 +1628,9 @@ button {
 
     .submit-btn {
         padding: clamp(10px, 1vw, 12px);
-       
+
         color: white;
-    
+
         border-radius: 25px;
         cursor: pointer;
         font-size: clamp(5px, 2vw, 12px);
@@ -1664,7 +1639,7 @@ button {
         backdrop-filter: blur(10px);
         text-transform: uppercase;
         letter-spacing: 1px;
-      
+
     }
 
 
@@ -1764,7 +1739,7 @@ button {
         flex: 1;
         max-width: 100%;
         background: rgba(255, 255, 255, 0.1);
-        
+
         backdrop-filter: blur(20px);
         padding: clamp(5px, 2vw, 10px);
         border-radius: 20px;
@@ -1776,7 +1751,7 @@ button {
         padding: clamp(10px, 1vw, 12px);
         background: rgba(255, 255, 255, 0.2);
         color: white;
-        
+
         border-radius: 25px;
         cursor: pointer;
         font-size: clamp(5px, 2vw, 12px);
@@ -1795,8 +1770,8 @@ button {
         padding: clamp(12px, 2vw, 16px);
         border-radius: 12px;
         border: 1px solid rgba(255, 255, 255, 0.3);
-        
-         font-size: clamp(0.4rem, 1.5vw, 0.7rem);
+
+        font-size: clamp(0.4rem, 1.5vw, 0.7rem);
         transition: all 0.3s ease;
         font-family: inherit;
         background: rgba(255, 255, 255, 0.1);
@@ -1816,7 +1791,7 @@ button {
         max-width: 100%;
     }
 
-    
+
 
     .contactme-special h2 {
         font-size: clamp(0.5rem, 2.5vw, 1.5rem);
@@ -1827,7 +1802,7 @@ button {
     }
 
     .contactme-special p {
-        
+
         font-size: clamp(0.4rem, 1.5vw, 0.7rem);
         line-height: 1.6;
         color: #444;
@@ -1851,7 +1826,7 @@ button {
         border: 1px solid black;
 
     }
-   
+
 
 
 }
@@ -1862,15 +1837,15 @@ button {
     padding: 40px 0;
     margin-top: 80px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    width:100%;
-     scroll-snap-align: end;
+    width: 100%;
+    scroll-snap-align: end;
     min-height: auto;
 }
 
 .footer-container {
     text-align: center;
     color: #e4e4e4;
-    width:100%;
+    width: 100%;
 }
 
 .footer-name {
@@ -1918,23 +1893,25 @@ button {
 }
 
 
-@media (max-width:320px){
+@media (max-width:320px) {
     .footer-name {
-     font-size: clamp(0.5rem, 2.5vw, 1.5rem);
+        font-size: clamp(0.5rem, 2.5vw, 1.5rem);
     }
 
-    
-.footer-links a {
-    font-size: clamp(0.4rem, 1.5vw, 0.7rem);
+
+    .footer-links a {
+        font-size: clamp(0.4rem, 1.5vw, 0.7rem);
+    }
+
+    .footer-copy {
+        font-size: clamp(0.4rem, 1.5vw, 0.7rem);
+    }
+
+    .footer-socials a {
+        font-size: 10px;
+    }
 }
 
-.footer-copy {
-    font-size: clamp(0.4rem, 1.5vw, 0.7rem);
-}
-.footer-socials a {
-    font-size:10px;
-}
-}
 /* ================= FULL-SCREEN SECTIONS ================= */
 body {
     margin: 0;
