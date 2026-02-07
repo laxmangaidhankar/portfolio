@@ -360,6 +360,10 @@ button {
     }
 }
 
+
+
+
+
 /* ================= ABOUT SECTION ================= */
 #aboutme {
     color: rgb(0, 0, 0);
@@ -375,8 +379,6 @@ button {
     width: 100%;
     margin: 0 auto;
 }
-
-
 
 .profile-img img {
     width: clamp(250px, 30vw, 350px);
@@ -401,9 +403,7 @@ button {
 }
 
 .aboutme-content p {
-
     font-size: clamp(1rem, 2.2vw, 1.3rem);
-
     line-height: 1.6;
     color: rgb(0, 0, 0);
     text-align: justify;
@@ -417,76 +417,46 @@ button {
         padding: clamp(15px, 4vw, 15px);
         gap: clamp(15px, 1vw, 25px);
     }
-
     .aboutme-content {
-        flex: 1;
         max-width: clamp(500px, 50vw, 600px);
     }
-
     .profile-img img {
         width: clamp(150px, 20vw, 250px);
         height: clamp(200px, 25vw, 300px);
-        object-fit: cover;
-        border-radius: 16px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        border: 3px solid rgba(255, 255, 255, 0.3);
     }
-
-
 }
 
 
 @media (max-width: 500px) {
     .aboutme-section {
-        flex-direction: row;
-        text-align: center;
         padding: clamp(15px, 4vw, 25px);
         gap: clamp(25px, 5vw, 35px);
     }
-
     .aboutme-content {
         max-width: 100%;
     }
-
     .aboutme-content h1 {
         font-size: clamp(1rem, 2vw, 1.8rem);
     }
-
     .profile-img img {
         width: clamp(150px, 20vw, 250px);
         height: clamp(200px, 25vw, 300px);
-        object-fit: cover;
-        border-radius: 16px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        border: 3px solid rgba(255, 255, 255, 0.3);
     }
 
     .aboutme-content p {
         font-size: clamp(0.4rem, 0.5vw, 0.8rem);
-
-        line-height: 1.6;
-        color: rgb(0, 0, 0);
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 }
-
 
 @media (max-width: 320px) {
     .profile-img img {
         width: clamp(150px, 40vw, 180px);
         height: clamp(150px, 40vw, 180px);
     }
-
-
     .profile-img img {
         width: clamp(100px, 10vw, 150px);
         height: clamp(100px, 15vw, 100px);
-        object-fit: cover;
-        border-radius: 16px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        border: 3px solid rgba(255, 255, 255, 0.3);
     }
-
     .aboutme-content p {
         font-size: clamp(0.4rem, 1.5vw, 0.7rem);
     }
