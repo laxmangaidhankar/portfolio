@@ -1040,43 +1040,6 @@ button {
     }
 }
 
-
-
-
-
-/* ================= TESTIMONIALS ================= */
-
-.activities-section {
-
-    gap: 20px;
-    padding: 60px;
-
-}
-
-.activity-header img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-.activities-card {
-    border: 2px solid black;
-    padding: 25px;
-    width: 300px;
-    border-radius: 10px;
-
-}
-
-.activity {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    gap: 20px;
-
-}
-
 /* ================= CONTACT ================= */
 #contactme {
     padding: clamp(20px, 4vw, 40px);
@@ -1093,7 +1056,6 @@ button {
     padding-top: 100px;
     margin: 0 auto;
 }
-
 
 .contactme-form {
     flex: 1;
@@ -1177,15 +1139,10 @@ button {
     border: 2px solid rgba(255, 255, 255, 0.3);
     color: #222;
     border: 2px solid black;
-
-
     transition: all 0.3s ease;
-
-
 }
 
 .aboutme-links a:hover {
-
     background: black;
     color: white;
     transform: translateY(-2px);
@@ -1198,7 +1155,6 @@ button {
 }
 
 .contactme-special h1 {
-
     font-size: clamp(2.5rem, 6vw, 4rem);
     margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
     color: #222;
@@ -1230,7 +1186,6 @@ button {
     margin: 10px 0;
     text-align: justify;
     text-justify: inter-word;
-
 }
 
 .contact-info i {
@@ -1240,7 +1195,6 @@ button {
 
 .contact-info a {
     color: #000000;
-    /* change depending on your theme */
     text-decoration: none;
     font-weight: 500;
     width: 100%;
@@ -1248,7 +1202,6 @@ button {
 
 .contact-info a:hover {
     color: #000000;
-
     font-weight: 500;
     text-decoration: underline;
 }
@@ -1260,265 +1213,120 @@ button {
 
 /* Mobile responsive */
 @media (max-width: 768px) {
-
-
     .contactme-section {
-        display: flex;
         gap: clamp(40px, 8vw, 80px);
-        align-items: center;
-        justify-content: center;
         max-width: 1200px;
-        width: 100%;
-        padding-top: 100px;
     }
-
-
     .contactme-form,
     .contactme-special {
         max-width: 100%;
     }
 
-
-
     .contact-info p {
         font-size: clamp(0.9rem, 2.2vw, 1.2rem);
-        margin: 10px 0;
-        text-align: justify;
-        text-justify: inter-word;
-
     }
+    
 }
 
 
 
 
 @media (max-width: 500px) {
-
-
-
     .contactme-section {
-        display: flex;
         gap: clamp(40px, 8vw, 80px);
-        align-items: center;
-        justify-content: center;
         max-width: 1200px;
-        width: 100%;
-        padding-top: 100px;
     }
-
     .contactme-form {
-        flex: 1;
-        max-width: 100%;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(20px);
-        padding: clamp(5px, 2vw, 10px);
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        max-width: 100%; 
+        padding: clamp(5px, 2vw, 10px);    
     }
-
-
     .submit-btn {
         padding: clamp(10px, 1vw, 12px);
-
-        color: white;
-
         border-radius: 25px;
-        cursor: pointer;
         font-size: clamp(5px, 2vw, 12px);
-        font-weight: 700;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-
     }
-
-
     .contactme-form input,
     .contactme-form textarea {
-        width: 100%;
-        padding: clamp(12px, 2vw, 16px);
-        border-radius: 12px;
         border: 1px solid rgba(255, 255, 255, 0.3);
         font-size: clamp(9px, 1vw, 16px);
-        transition: all 0.3s ease;
-        font-family: inherit;
-        background: rgba(255, 255, 255, 0.1);
-        color: #222;
-        border: 1px solid black;
-        backdrop-filter: blur(10px);
+        border: 1px solid black; 
     }
-
     .contactme-form form {
-        display: flex;
-        flex-direction: column;
         gap: clamp(10px, 2vw, 10px);
     }
-
     .contactme-special {
-        flex: 1;
         max-width: 100%;
     }
-
     .contactme-special h1 {
         font-size: clamp(1rem, 2vw, 1.8rem);
-        margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
-        color: #222;
-        font-weight: 800;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
     .contactme-special h2 {
         font-size: clamp(0.3rem, 2vw, 1rem);
-        margin-bottom: clamp(0.5rem, 2vw, 1rem);
-        color: #333;
-        font-weight: 600;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
-
     .contactme-special p {
         font-size: clamp(0.4rem, 1vw, 0.8rem);
-        line-height: 1.6;
-        color: #444;
-        margin-bottom: clamp(1rem, 2vw, 1.2rem);
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
-
     .contactme-form .aboutme-links {
-        margin-top: clamp(15px, 3vw, 20px);
-        justify-content: center;
         display: flex;
-
         color: white;
         transform: translateY(-2px);
     }
-
     .contactme-form .aboutme-links a {
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        color: #222;
         border: 1px solid black;
-
     }
-
 
 }
 
 
-
-
-
-
-
-
-
 @media (max-width: 320px) {
-
-
-
     .contactme-section {
-        display: flex;
         gap: clamp(40px, 8vw, 80px);
-        align-items: center;
-        justify-content: center;
         max-width: 1200px;
-        width: 100%;
-        padding-top: 100px;
     }
-
     .contactme-form {
-        flex: 1;
         max-width: 100%;
-        background: rgba(255, 255, 255, 0.1);
-
-        backdrop-filter: blur(20px);
         padding: clamp(5px, 2vw, 10px);
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
     }
-
-
     .submit-btn {
         padding: clamp(10px, 1vw, 12px);
-        background: rgba(255, 255, 255, 0.2);
-        color: white;
-
         border-radius: 25px;
-        cursor: pointer;
         font-size: clamp(5px, 2vw, 12px);
-        font-weight: 700;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        background-color: #000000;
     }
-
 
     .contactme-form input,
     .contactme-form textarea {
-        width: 100%;
-        padding: clamp(12px, 2vw, 16px);
-        border-radius: 12px;
         border: 1px solid rgba(255, 255, 255, 0.3);
-
         font-size: clamp(0.4rem, 1.5vw, 0.7rem);
-        transition: all 0.3s ease;
-        font-family: inherit;
-        background: rgba(255, 255, 255, 0.1);
-        color: #222;
         border: 1px solid black;
-        backdrop-filter: blur(10px);
     }
-
     .contactme-form form {
         display: flex;
         flex-direction: column;
         gap: clamp(10px, 2vw, 10px);
     }
-
     .contactme-special {
         flex: 1;
         max-width: 100%;
     }
-
-
-
     .contactme-special h2 {
         font-size: clamp(0.5rem, 2.5vw, 1.5rem);
         margin-bottom: clamp(0.5rem, 2vw, 1rem);
-        color: #333;
-        font-weight: 600;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
     .contactme-special p {
-
         font-size: clamp(0.4rem, 1.5vw, 0.7rem);
-        line-height: 1.6;
-        color: #444;
-        margin-bottom: clamp(1rem, 2vw, 1.2rem);
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    }
+     }
 
     .contactme-form .aboutme-links {
-        margin-top: clamp(15px, 3vw, 20px);
-        justify-content: center;
         display: flex;
-
         color: white;
         transform: translateY(-2px);
     }
 
     .contactme-form .aboutme-links a {
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        color: #222;
         border: 1px solid black;
-
     }
-
-
+    
 
 }
 
