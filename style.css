@@ -1326,8 +1326,6 @@ button {
     .contactme-form .aboutme-links a {
         border: 1px solid black;
     }
-    
-
 }
 
 /* ================= FOOTER ================= */
@@ -1396,12 +1394,9 @@ button {
     .footer-name {
         font-size: clamp(0.5rem, 2.5vw, 1.5rem);
     }
-
-
     .footer-links a {
         font-size: clamp(0.4rem, 1.5vw, 0.7rem);
     }
-
     .footer-copy {
         font-size: clamp(0.4rem, 1.5vw, 0.7rem);
     }
@@ -1417,7 +1412,6 @@ body {
     padding: 0;
     overflow-x: hidden;
     padding-top: clamp(60px, 8vw, 80px);
-    /* Account for fixed navbar */
 }
 
 /* Full-screen sections */
@@ -1429,7 +1423,6 @@ section {
     scroll-snap-align: start;
     position: relative;
     opacity: 0;
-
     transform: translateY(50px);
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -1438,7 +1431,6 @@ section.active {
     opacity: 1;
     padding-top: 100px;
     transform: translateY(0);
-
 }
 
 /* Scroll snap container */
@@ -1618,17 +1610,6 @@ section {
 
     }
 }
-
-@media (min-width: 321px) and (max-width: 480px) {
-    /* Small phones */
-
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-    /* Large phones / small tablets */
-
-}
-
 @media (min-width: 769px) and (max-width: 1024px) {
 
     /* Tablets / small laptops */
