@@ -465,10 +465,6 @@ button {
 
 
 
-
-
-
-
 /* ================= SKILLS ================= */
 #skills {
     color: rgb(0, 0, 0);
@@ -548,32 +544,24 @@ button {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 15px;
     }
-
     .skill {
         padding: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .myskills-section {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-    }
 
     .section-title {
         font-size: clamp(1rem, 2vw, 1.8rem);
     }
 
-    .skill {
-        padding: 12px;
-    }
 
     .skill i {
-        font-size: clamp(20px, 6vw, 28px);
+        font-size: 12px;
     }
 
     .skill span {
-        font-size: clamp(10px, 3vw, 13px);
+        font-size: clamp(0.8rem, 1.5vw, 1.2rem);
     }
 }
 
@@ -592,6 +580,10 @@ button {
         gap: 12px;
     }
 }
+
+
+
+
 
 
 /* ================= EXPERIENCE ================= */
