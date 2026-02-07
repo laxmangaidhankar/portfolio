@@ -1,141 +1,101 @@
-// Dynamic Section Loading and Animations
-document.addEventListener('DOMContentLoaded', function() {
-    initializePortfolio();
+// ===== INITIAL SETUP =====
+document.addEventListener("DOMContentLoaded", () => {
     setupSmoothScrolling();
     setupScrollAnimations();
     setupNavbarEffects();
+    activateFirstSection();
 });
 
-function initializePortfolio() {
-    // Show first section immediately
-    const firstSection = document.querySelector('section');
-    if (firstSection) {
-        firstSection.classList.add('active');
-        animateContent(firstSection);
-    }
+// ===== FIRST SECTION ANIMATION =====
+function activateFirstSection() {
+    const first = document.querySelector("section");
+    if (!first) return;
+    first.classList.add("active");
+    animateContent(first);
 }
 
+// ===== INTERSECTION OBSERVER =====
 function setupScrollAnimations() {
-    const sections = document.querySelectorAll('section');
-    
-    // Intersection Observer for section visibility
-    const sectionObserver = new IntersectionObserver((entries) => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add active class to current section
-                entry.target.classList.add('active');
-                animateContent(entry.target);
-                
-                // Remove active class from other sections for single-section view
-                sections.forEach(section => {
-                    if (section !== entry.target) {
-                        section.classList.remove('active');
-                        // Reset animations for non-active sections
-                        const animateElements = section.querySelectorAll('.content-animate');
-                        animateElements.forEach(element => {
-                            element.classList.remove('show');
-                        });
-                    }
-                });
-            }
+            if (!entry.isIntersecting) return;
+
+            const section = entry.target;
+            section.classList.add("active");
+            animateContent(section);
+
+            // Remove active states from other sections
+            sections.forEach(s => {
+                if (s !== section) {
+                    s.classList.remove("active");
+                    resetContentAnimations(s);
+                }
+            });
         });
     }, {
-        threshold: 0.5, // Trigger when 50% of section is visible
-        rootMargin: '-10% 0px -10% 0px'
+        threshold: 0.5,
+        rootMargin: "-10% 0px -10% 0px"
     });
 
-    // Observe all sections
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
+    sections.forEach(sec => observer.observe(sec));
 }
 
+// ===== ANIMATIONS =====
 function animateContent(section) {
-    const animateElements = section.querySelectorAll('.content-animate');
-    
-    animateElements.forEach((element, index) => {
-        setTimeout(() => {
-            element.classList.add('show');
-        }, index * 150); // Stagger animations
+    section.querySelectorAll(".content-animate").forEach((el, i) => {
+        setTimeout(() => el.classList.add("show"), i * 150);
     });
 }
 
+function resetContentAnimations(section) {
+    section.querySelectorAll(".content-animate").forEach(el => {
+        el.classList.remove("show");
+    });
+}
+
+// ===== SMOOTH SCROLLING =====
 function setupSmoothScrolling() {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", (e) => {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+            const target = document.querySelector(link.getAttribute("href"));
+            if (target) target.scrollIntoView({ behavior: "smooth" });
         });
     });
 }
 
+// ===== NAVBAR EFFECTS =====
 function setupNavbarEffects() {
-    const navbar = document.querySelector('.nav-bar');
-    let lastScrollY = window.scrollY;
-
-    window.addEventListener('scroll', function() {
-        const currentScrollY = window.scrollY;
-        
-        // Add scrolled class for styling
-        if (currentScrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        lastScrollY = currentScrollY;
+    const navbar = document.querySelector(".nav-bar");
+    window.addEventListener("scroll", () => {
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
     });
 }
 
-// Keyboard navigation support
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+// ===== KEYBOARD NAVIGATION =====
+document.addEventListener("keydown", (e) => {
+    if (["ArrowDown", "PageDown"].includes(e.key)) {
         e.preventDefault();
-        scrollToNextSection();
-    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        scrollToAdjacentSection(1);
+    }
+    if (["ArrowUp", "PageUp"].includes(e.key)) {
         e.preventDefault();
-        scrollToPrevSection();
+        scrollToAdjacentSection(-1);
     }
 });
 
-function scrollToNextSection() {
-    const sections = document.querySelectorAll('section');
-    const currentSection = document.querySelector('section.active');
-    const currentIndex = Array.from(sections).indexOf(currentSection);
-    
-    if (currentIndex < sections.length - 1) {
-        sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+function scrollToAdjacentSection(direction) {
+    const sections = Array.from(document.querySelectorAll("section"));
+    const current = document.querySelector("section.active");
+    const index = sections.indexOf(current);
+    const nextIndex = index + direction;
+
+    if (nextIndex >= 0 && nextIndex < sections.length) {
+        sections[nextIndex].scrollIntoView({ behavior: "smooth" });
     }
 }
 
-function scrollToPrevSection() {
-    const sections = document.querySelectorAll('section');
-    const currentSection = document.querySelector('section.active');
-    const currentIndex = Array.from(sections).indexOf(currentSection);
-    
-    if (currentIndex > 0) {
-        sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-// Add loading animation
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-    
-    // Initialize first section
-    const firstSection = document.querySelector('section');
-    if (firstSection) {
-        firstSection.classList.add('active');
-        animateContent(firstSection);
-    }
-});
-
-
- document.getElementById("year").textContent = new Date().getFullYear();
+// ===== SET CURRENT YEAR =====
+document.getElementById("year").textContent = new Date().getFullYear();

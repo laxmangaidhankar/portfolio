@@ -211,6 +211,9 @@ button {
         padding: 1px px;
 
     }
+    .resume-download i{
+        font-size:10px;
+    }
 
     
 }
@@ -465,11 +468,8 @@ button {
     }
 
     .aboutme-links a {
-        border: 1px solid black;
-        padding: clamp(4px, 0.5vw, 8px) clamp(5px, 1vw, 7px);
-        border-radius: 4px;
-        transition: all 0.3s ease;
-        font-size: clamp(10px, 2vw, 10px);
+       
+        font-size: 10px;
     }
 
     .aboutme-links {
@@ -522,7 +522,9 @@ button {
 }
 
 .aboutme-content p {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+   
+        font-size: clamp(1rem, 2.2vw, 1.3rem);
+
     line-height: 1.6;
     color: rgb(0, 0, 0);
     text-align: justify;
@@ -551,12 +553,7 @@ button {
         border: 3px solid rgba(255, 255, 255, 0.3);
     }
 
-    .aboutme-content p {
-        font-size: clamp(0.7rem, 1.5vw, 0.4rem);
-        line-height: 1.6;
-        color: rgb(0, 0, 0);
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    }
+    
 }
 
 
@@ -768,6 +765,8 @@ button {
     padding: clamp(10px, 2vw, 20px) 0;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+        line-height: 1.8;
+
 }
 
 /* Scrollbar styling */
@@ -790,8 +789,8 @@ button {
 .experience-card {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
-    flex: 0 0 clamp(280px, 35vw, 350px);
-    min-height: clamp(380px, 45vw, 450px);
+    flex: 0 0 clamp(120px, 60vw, 400px);
+    min-height: clamp(280px, 35vw, 300px);
     border-radius: 16px;
     padding: clamp(20px, 4vw, 30px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -800,6 +799,7 @@ button {
     flex-direction: column;
     justify-content: flex-start;
     border: 1px solid rgba(255, 255, 255, 0.3);
+      line-height: 1.8;
 }
 
 .experience-card:hover {
@@ -813,6 +813,7 @@ button {
     margin-bottom: clamp(10px, 2vw, 15px);
     font-weight: 700;
     line-height: 1.3;
+    
     color: #222;
 }
 
@@ -832,7 +833,9 @@ button {
     text-align: center;
     font-weight: 600;
     text-transform: uppercase;
+      line-height: 1;
     letter-spacing: 0.5px;
+      margin-bottom:10px;
 }
 
 .experience-card p {
@@ -841,6 +844,8 @@ button {
     line-height: 1.5;
     color: #555;
     flex-grow: 1;
+      line-height: 1.8;
+      margin-bottom:10px;
 }
 
 .experience-card {
@@ -882,58 +887,6 @@ button {
 
 }
 
-@media (max-width: 1024px) {
-    .experience-card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        flex: 0 0 clamp(280px, 35vw, 350px);
-        min-height: clamp(320px, 40vw, 350px);
-        border-radius: 16px;
-        padding: clamp(20px, 4vw, 30px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-
-    .experience-card .date {
-        font-size: clamp(0.85rem, 1.8vw, 1rem);
-        margin-bottom: clamp(2px, 1vw, 2px);
-        color: #4facfe;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .experience-card h2 {
-      
-        margin-bottom: clamp(10px, 2vw, 15px);
-        font-weight: 700;
-        line-height: 1.3;
-        color: #222;
-    }
-
-    .experience-img {
-        width: clamp(100%, 20vw, 80px);
-        height: clamp(80px, 15vw, 140px);
-        object-fit: cover;
-        border-radius: 16px;
-
-        border: 3px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .experience-card p {
-       font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-        line-height: 1.5;
-        color: #555;
-        flex-grow: 1;
-        text-align: justify;
-        text-justify: inter-word;
-    }
-}
 
 /* Mobile responsive */
 @media (max-width: 768px) {
@@ -957,8 +910,8 @@ button {
 
 @media (max-width: 480px) {
     .experience-card {
-        flex: 0 0 clamp(220px, 80vw, 270px);
-        min-height: clamp(120px, 40vw, 200px);
+        flex: 0 0 clamp(120px, 40vw, 200px);
+        min-height: clamp(90px, 20vw, 150px);
         padding: 18px;
     }
 
@@ -974,6 +927,14 @@ button {
     opacity: 0.7;
     transition: opacity 0.2s ease;
 
+}
+
+@media(max-width:320px){
+    .experience-card {
+        flex: 0 0 clamp(150px, 60vw, 200px);
+        min-height: clamp(100px, 20vw, 150px);
+        padding: 18px;
+    }
 }
 }
 
@@ -1018,6 +979,7 @@ button {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .project1:hover,
@@ -1224,8 +1186,6 @@ button {
         flex-shrink: 0;
     }
 
-
-
     .myprojects-section {
         display: flex;
         max-width: 1200px;
@@ -1278,12 +1238,48 @@ button {
 
 }
 
+@media (max-width: 380px) {
 
+    .content {
+        flex: 1;
+        max-width: clamp(100%, 20vw, 200px);
+        padding: clamp(1px, 2vw, 50px);
+    }
 
+    .project1,
+    .project2 {
+        display: flex;
+        align-items: center;
+        gap: clamp(13px, 2.5vw, 20px);
+        padding: clamp(25px, 2.5vw, 25px);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
 
+    .content h2 {
+        font-size: clamp(0.7rem, 2vw, 1.2rem);
+        color: #222;
+        line-height: 1.2;
+        font-weight: 800;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .content p {
+        font-size: clamp(0.6rem, 0.7vw, 1rem);
+        line-height: 1.6;
+        color: #333;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .project-links i {
+        font-size: 12px;
+    }
+}
 
 @media (max-width: 320px) {
-
 
     .myprojects-section .section-title {
         text-align: center;
@@ -1498,9 +1494,9 @@ button {
 
 .submit-btn {
     padding: clamp(12px, 2vw, 16px);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(0, 0, 0);
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 50px;
     cursor: pointer;
     font-size: clamp(14px, 2vw, 16px);
@@ -1515,7 +1511,7 @@ button {
 .submit-btn:hover {
 
     transform: translateY(-5px);
-    background-color: #2c2b56;
+    background-color: #000000;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -1578,7 +1574,7 @@ button {
 
 
 .contact-info p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
     margin: 10px 0;
     text-align: justify;
     text-justify: inter-word;
@@ -1629,6 +1625,16 @@ button {
     .contactme-special {
         max-width: 100%;
     }
+    
+
+
+.contact-info p {
+    font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+    margin: 10px 0;
+    text-align: justify;
+    text-justify: inter-word;
+
+}
 }
 
 
@@ -1661,9 +1667,9 @@ button {
 
     .submit-btn {
         padding: clamp(10px, 1vw, 12px);
-        background: rgba(255, 255, 255, 0.2);
+       
         color: white;
-        border: 2px solid rgba(255, 255, 255, 0.3);
+    
         border-radius: 25px;
         cursor: pointer;
         font-size: clamp(5px, 2vw, 12px);
@@ -1672,7 +1678,7 @@ button {
         backdrop-filter: blur(10px);
         text-transform: uppercase;
         letter-spacing: 1px;
-        background-color: #483d3d;
+      
     }
 
 
@@ -1784,7 +1790,7 @@ button {
         padding: clamp(10px, 1vw, 12px);
         background: rgba(255, 255, 255, 0.2);
         color: white;
-        border: 2px solid rgba(255, 255, 255, 0.3);
+        
         border-radius: 25px;
         cursor: pointer;
         font-size: clamp(5px, 2vw, 12px);
@@ -1793,7 +1799,7 @@ button {
         backdrop-filter: blur(10px);
         text-transform: uppercase;
         letter-spacing: 1px;
-        background-color: #483d3d;
+        background-color: #000000;
     }
 
 
@@ -1869,11 +1875,15 @@ button {
     padding: 40px 0;
     margin-top: 80px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+    width:100%;
+     scroll-snap-align: end;
+    min-height: auto;
 }
 
 .footer-container {
     text-align: center;
     color: #e4e4e4;
+    width:100%;
 }
 
 .footer-name {
