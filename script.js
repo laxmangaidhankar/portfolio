@@ -96,6 +96,31 @@ function scrollToAdjacentSection(direction) {
         sections[nextIndex].scrollIntoView({ behavior: "smooth" });
     }
 }
+document.getElementById("form-status").style.display = "none";
+
+
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault(); // Prevent form from leaving the page
+
+    const form = e.target;
+
+    // Send form data to Web3Forms
+    let response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form)
+    });
+
+    let statusMessage = document.getElementById("form-status");
+
+    if (response.ok) {
+        statusMessage.style.display = "block";   // Show the thank-you message
+        form.reset();                            // Clear all input fields
+    } else {
+        statusMessage.style.display = "block";
+        statusMessage.style.color = "red";
+        statusMessage.innerText = "❌ Something went wrong. Please try again.";
+    }
+});
 
 // ===== SET CURRENT YEAR =====
 document.getElementById("year").textContent = new Date().getFullYear();
