@@ -1,345 +1,744 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laxman Gaidhankar — Portfolio</title>
+    <title>Laxman Gaidhankar — Software Engineer</title>
+    <meta name="description"
+        content="Personal portfolio of Laxman — Computer Engineering Student specializing in Backend Development, Android Development, and Scalable Systems. Targeting Software Engineering Internships at Amazon, Microsoft, JPMorgan Chase, Bank of America, BNY, Google, and Atlassian." />
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
+    <!-- Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-
-    <!-- Font Awesome -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-T8HpXhkCj9gdE..." crossorigin="anonymous" />
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!-- ================= HEADER ================= -->
-    <header>
-        <nav class="nav-bar">
-            <a href="#home" class="home-navoption">Portfolio.</a>
+    <header class="glass-navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-text">laxman<span class="logo-dot">.</span>dev</span>
+            </a>
 
-            <div class="mid-navbar">
-                <a href="#aboutme">About Me</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contactme">Contact Me</a>
-            </div>
+            <nav class="nav-links-desktop">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Work</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
 
-            <div class="resume-navoption">
-                <a href="resume.pdf" download class="resume-download">
-                    Resume <i class="fa-solid fa-download"></i>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+
+                <a href="resume.pdf" download class="btn btn-primary btn-sm">
+                    Resume <i class="fa-solid fa-arrow-down"></i>
                 </a>
 
+                <button id="mobile-toggle" class="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <!-- ================= HERO / ABOUT ================= -->
-    <main id="home">
-        <section class="aboutme">
-            <div class="aboutme-mainsection content-animate">
-                <h1>Hello, I'm Laxman Gaidhankar.</h1>
-                <h2>Passionate About Code, Clarity & Creativity</h2>
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="mobile-drawer-content">
+            <a href="#home" class="mobile-nav-link">Home</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#projects" class="mobile-nav-link">Work</a>
+            <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#experience" class="mobile-nav-link">Experience</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+            <a href="resume.pdf" download class="btn btn-primary w-full text-center">
+                Download Resume →
+            </a>
+        </div>
+    </div>
 
-                <p>
-                    I create digital experiences that are simple, smooth, and enjoyable.
-                    Whether it’s a web interface or a mobile app, I love crafting products
-                    that look good, work fast, and actually solve real problems.
+    <main>
+        <!-- ================= HERO SECTION (CENTER-ALIGNED VERCEL STYLE) ================= -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+
+
+
+                <h1 class="hero-headline">
+                    Building Reliable Software <br />That Solves Real Problems.
+                </h1>
+
+                <p class="hero-subheading">
+                    I'm Laxman Gaidhankar, an Electronics & Telecommunication Engineering student focused on backend
+                    development, Android development, and full-stack applications, with a passion for building reliable,
+                    scalable, and user-centric software.
                 </p>
 
-
-                <div class="aboutme-links">
-                    <a href="https://github.com/laxmangaidhankar"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://leetcode.com/u/LaxmanGaidhankar/" target="_blank">
-                        <i class="fa-solid fa-code"></i>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        Explore Projects <i class="fa-solid fa-arrow-down"></i>
                     </a>
-                    <a href="mailto:laxmangaidhankar44@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#contact" class="btn btn-secondary">
+                        Get in touch <span class="arrow-icon">&rarr;</span>
+                    </a>
+                </div>
 
-                    <a href="https://www.linkedin.com/in/laxmangaidhankar/"><i class="fa-brands fa-linkedin"></i></a>
+                <!-- SIGNATURE VISUAL CENTERPIECE (Interactive System Terminal) -->
+                <div class="signature-visual-wrapper reveal-element">
+                    <div class="browser-frame">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="browser-title">laxman-system-architecture &mdash; bash</div>
+                            <div class="browser-status">v2.4.0-production</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="t-prompt">system@laxman-dev:~$</span> <span class="t-cmd">curl -X GET
+                                    https://api.laxman.dev/v1/status</span>
+                            </div>
+                            <div class="terminal-response">
+                                {<br />
+                                &nbsp;&nbsp;<span class="t-key">"engineer"</span>: <span class="t-str">"Laxman
+                                    Gaidhankar"</span>,<br />
+                                &nbsp;&nbsp;<span class="t-key">"degree"</span>: <span class="t-str">"B.Tech.
+                                    Electronics &
+                                    Telecommunication Engineering (2025-2028)"</span>,<br />
+                                &nbsp;&nbsp;<span class="t-key">"specialization"</span>: [<span class="t-str">"Backend
+                                    Systems"</span>, <span class="t-str">"Android Native"</span>, <span
+                                    class="t-str">"Full-Stack"</span>],<br />
+                                &nbsp;&nbsp;<span class="t-key">"tech_stack"</span>:
+                                [
+                                <span class="t-str">"Java"</span>,
+                                <span class="t-str">"Spring Boot"</span>,
+                                <span class="t-str">"Node.js"</span>,
+                                <span class="t-str">"React"</span>,
+                                <span class="t-str">"PostgreSQL"</span>,
+                                <span class="t-str">"MongoDB"</span>
+                                ],<br>
+                                &nbsp;&nbsp;<span class="t-key">"key_achievements"</span>: [<span class="t-str">"1st
+                                    Winner Build for Billions"</span>, <span class="t-str">"Top 33 Dimension X"</span>,
+                                <span class="t-str">"Top 100 AWS IIT Bombay"</span>],<br />
+                                &nbsp;&nbsp;<span class="t-key">"architecture_standard"</span>: <span
+                                    class="t-str">"Clean Architecture, Fault Tolerant, Zero-Downtime"</span>,<br />
+                                &nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-str">"Available for SWE
+                                    Internships"</span><br />
+                                }
+                            </div>
+                            <div class="terminal-line">
+                                <span class="t-prompt">system@laxman-dev:~$</span> <span class="t-cursor">&block;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= ABOUT SECTION ================= -->
+        <section id="about" class="section-padding">
+            <div class="section-container">
+                <span class="section-label">ABOUT</span>
+
+                <div class="about-content reveal-element">
+                    <h2 class="about-statement">
+
+                        Building reliable backend applications, Android experiences, and full-stack solutions with clean
+                        architecture and modern engineering practices.
+
+                    </h2>
+
+                    <div class="about-text-grid">
+                        <p class="about-paragraph">
+                            I'm an Electronics & Telecommunication Engineering student passionate about software
+                            engineering, with a strong interest in backend development, Android applications, and
+                            full-stack web development. I enjoy building reliable software using Java, Spring Boot,
+                            Node.js, React, and MongoDB while continuously learning modern engineering practices.
+                        </p>
+                        <p class="about-paragraph">
+                            My interests include data structures and algorithms, object-oriented programming,
+                            database management, and backend system design. I value clean architecture,
+                            maintainable code, and building software that is reliable, efficient, and easy to
+                            extend.
+                        </p>
+                    </div>
+
+                    <!-- Subtle Stats Grid -->
+                    <div class="about-stats-row">
+                        <div class="stat-item">
+                            <span class="stat-num">2+</span>
+                            <span class="stat-lbl">Hackathons Winner</span>
+                        </div>
+
+                        <div class="stat-item">
+                            <span class="stat-num">500+</span>
+                            <span class="stat-lbl">GitHub Commits</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">200+</span>
+                            <span class="stat-lbl">Leetcode Problems</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">2+</span>
+                            <span class="stat-lbl">Production Projects</span>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-
-            <div class="img content-animate">
-                <img src="./images/profile.jpeg" alt="Profile Image" />
-            </div>
         </section>
 
-        <!-- ================= ABOUT ME SECTION ================= -->
-        <section id="aboutme" class="aboutme-section">
-            <div class="profile-img">
-                <img src="./images/aboutme.jpeg" alt="Profile Picture" />
-            </div>
+        <!-- ================= SELECTED WORK / PROJECTS ================= -->
+        <section id="projects" class="section-padding border-top">
+            <div class="section-container">
+                <span class="section-label">SELECTED WORK</span>
+                <h2 class="section-headline">Featured Engineering Projects</h2>
 
-            <div class="aboutme-content">
-                <h1>About Me</h1>
-                <p>
-                    I'm a full-stack developer with a strong focus on building fast, scalable, and user-centered
-                    products.
-                    I enjoy turning early-stage ideas into real, working solutions—from clean frontend interfaces to
-                    solid,
-                    reliable backend systems.
-                    With a startup-first mindset, I move quickly, iterate fast, and prioritize delivering real value to
-                    users.
-                    I love learning new technologies, improving workflows, and creating products that are simple,
-                    intuitive,
-                    and built to grow.
-                </p>
-            </div>
-        </section>
+                <div class="projects-list">
 
-        <!-- ================= SKILLS ================= -->
-        <section id="skills">
-            <div class="skills-container">
-                <h1 class="section-title content-animate">My Skills</h1>
-                <div class="myskills-section">
-                    <div class="skill content-animate"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
-                    <div class="skill content-animate"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
-                    <div class="skill content-animate"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-                    <div class="skill content-animate"><i class="fa-brands fa-react"></i><span>React</span></div>
-                    <div class="skill content-animate"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
-                    <div class="skill content-animate"><i class="fa-brands fa-java"></i><span>Java</span></div>
-                    <div class="skill content-animate"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
-                    <div class="skill content-animate"><i class="fa-solid fa-database"></i><span>MySQL</span></div>
-                    <div class="skill content-animate"><i class="fa-brands fa-android"></i><span>Android</span></div>
-                    <div class="skill content-animate"><i class="fa-brands fa-python"></i><span>Python</span></div>
-                    <div class="skill content-animate"><i class="fa-solid fa-database"></i><span>MongoDB</span></div>
-                    <div class="skill content-animate"><i class="fa-solid fa-server"></i><span>Express.js</span></div>
-                </div>
-            </div>
-        </section>
+                    <!-- Project 3: CipherVault -->
+                    <article class="project-row reveal-element">
+                        <div class="project-row-left">
+                            <div class="project-meta-tag">Security & Cryptography</div>
+                            <h3 class="project-name">CipherVault</h3>
+                            <p class="project-summary">
+                                A tokenization engine replacing sensitive PII fields with secure tokens before data
+                                enters
+                                downstream systems and reporting pipelines, with tenant-aware access isolation.
+                            </p>
 
+                            <div class="project-detail-box">
+                                <div class="detail-group">
+                                    <span class="detail-label">PROBLEM STATEMENT</span>
+                                    <p class="detail-val">Storing raw PII (account numbers, customer identity) in
+                                        application
+                                        and reporting pipelines risks exposure across institutional clients sharing the
+                                        same
+                                        multi-tenant system.</p>
+                                </div>
+                                <div class="detail-group">
+                                    <span class="detail-label">ARCHITECTURE OVERVIEW</span>
+                                    <p class="detail-val">Spring Boot service backed by PostgreSQL and JPA, using Spring
+                                        Security to enforce tenant-aware data access and a role-based detokenization
+                                        workflow
+                                        for accessing sensitive fields.</p>
+                                </div>
+                                <div class="detail-group">
+                                    <span class="detail-label">KEY FEATURES</span>
+                                    <ul class="feature-bullets">
+                                        <li>Tokenization engine replacing sensitive PII fields with secure tokens so
+                                            downstream
+                                            services operate only on tokenized data</li>
+                                        <li>Tenant-aware data access enforcing logical isolation between institutional
+                                            clients
+                                            in a shared multi-tenant architecture</li>
+                                        <li>Role-based detokenization workflow requiring reason codes and audit logging
+                                            for
+                                            every sensitive data access</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-        <!-- ================= PROJECTS ================= -->
-        <section id="projects">
-            <div class="myprojects-section">
-                <h1 class="section-title">My Projects</h1>
-
-                <!-- Project 1 -->
-                <div class="project1">
-                    <img src="./images/trashmate.jpeg" alt="Project 1" />
-
-                    <div class="content">
-                        <div class="project-header">
-                            <h2>01 — TrashMate</h2>
+                            <div class="project-tech-tags">
+                                <span class="mono-tag">Java</span>
+                                <span class="mono-tag">Spring Boot</span>
+                                <span class="mono-tag">Spring Security</span>
+                                <span class="mono-tag">PostgreSQL</span>
+                                <span class="mono-tag">JPA</span>
+                            </div>
 
                             <div class="project-links">
-                                <a href="https://github.com/laxmangaidhankar/TrashMate.git" target="_blank">
-                                    <i class="fa-brands fa-github"></i>
+                                <a href="https://github.com/laxmangaidhankar" target="_blank" class="project-link">
+                                    View GitHub <span class="arrow">&rarr;</span>
                                 </a>
-                                <a href="https://drive.google.com/file/d/1-Q6z08bFkFKRnigP6PX6Yr-gDyLwRbtR/view?usp=sharing" target="_blank">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                            </div>
+                        </div>
+
+                        <div class="project-row-right">
+                            <div class="browser-frame-preview">
+                                <div class="browser-bar">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="bar-url">ciphervault.laxman.dev</span>
+                                </div>
+                                <img src="./images/ciphervault.png" alt="CipherVault System Preview" loading="lazy"
+                                    class="project-img" />
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-row reveal-element">
+                        <div class="project-row-left">
+                            <div class="project-meta-tag">Privacy & Peer Support</div>
+                            <h3 class="project-name">HeartBench</h3>
+                            <p class="project-summary">
+                                Privacy-first peer support and study-matching platform connecting students in real time
+                                by
+                                need category and location, without exposing their identity.
+                            </p>
+
+                            <div class="project-detail-box">
+                                <div class="detail-group">
+                                    <span class="detail-label">PROBLEM STATEMENT</span>
+                                    <p class="detail-val">Public broadcast-style matching exposes who's asking for
+                                        support and
+                                        where — students need a way to find peer or study matches nearby without giving
+                                        up
+                                        their privacy.</p>
+                                </div>
+                                <div class="detail-group">
+                                    <span class="detail-label">ARCHITECTURE OVERVIEW</span>
+                                    <p class="detail-val">Mobile-first React PWA backed by a Node.js/Express service
+                                        using
+                                        Socket.io for real-time matching and MongoDB's 2dsphere geospatial indexing for
+                                        location-zone proximity matching.</p>
+                                </div>
+                                <div class="detail-group">
+                                    <span class="detail-label">KEY FEATURES</span>
+                                    <ul class="feature-bullets">
+                                        <li>Privacy-first matching engine using pseudonymized identities and location
+                                            fuzzing,
+                                            with secure server-side pairing instead of public broadcast matching</li>
+                                        <li>Real-time request-response matching via Socket.io, targeting sub-3-second
+                                            match
+                                            notification delivery</li>
+                                        <li>Category-based escalation logic routing high-sensitivity requests toward
+                                            campus
+                                            counseling resources rather than peer-only matching</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="project-tech-tags">
+                                <span class="mono-tag">React (PWA)</span>
+                                <span class="mono-tag">Node.js</span>
+                                <span class="mono-tag">Express.js</span>
+                                <span class="mono-tag">Socket.io</span>
+                                <span class="mono-tag">MongoDB (Geospatial)</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://github.com/laxmangaidhankar" target="_blank" class="project-link">
+                                    View GitHub <span class="arrow">&rarr;</span>
                                 </a>
                             </div>
                         </div>
 
-                        <p>
-                            A full-stack smart waste collection platform built with Android,
-                            Node.js, MongoDB, and React. Features on-demand pickup requests,
-                            real-time status updates, and a dashboard for collectors and admins.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project2">
-                    <img src="./images/medibox.jpeg" alt="Project 2" />
-
-                    <div class="content">
-                        <div class="project-header">
-                            <h2>02 — MediBox</h2>
-
-                            <div class="project-links">
-                                <a href="https://github.com/laxmangaidhankar/FinalProject_MediBox.git" target="_blank">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                                <a href="https://drive.google.com/file/d/128eJSlJRwdPGgGRLswvd-DSNg1UKSZzQ/view?usp=sharing" target="_blank">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
+                        <div class="project-row-right">
+                            <div class="browser-frame-preview">
+                                <div class="browser-bar">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="bar-url">heartbench.laxman.dev</span>
+                                </div>
+                                <img src="./images/heartbench.png" alt="HeartBench Platform Preview" loading="lazy"
+                                    class="project-img" />
                             </div>
                         </div>
+                    </article>
 
-                        <p>
-                            An Android medicine management app offering reminders, dosage tracking,
-                            and caregiver support. Built using Java, Firebase Firestore, and
-                            Material Design for a smooth user experience.
-                        </p>
-                    </div>
+
+
+
+                    <!-- Project 1: RelayPay -->
+                    <article class="project-row reveal-element">
+                        <div class="project-row-left">
+                            <div class="project-meta-tag">FinTech & System Resilience</div>
+                            <h3 class="project-name">RelayPay</h3>
+                            <p class="project-summary">
+                                A payment failover platform that reactively relays a failed transaction to a trusted
+                                family/circle member's linked bank account, verified after the failure occurs.
+                            </p>
+
+                            <div class="project-detail-box">
+                                <div class="detail-group">
+                                    <span class="detail-label">PROBLEM STATEMENT</span>
+                                    <p class="detail-val">Payment failures leave the payer stuck with no fallback.
+                                        Existing
+                                        approaches like NPCI UPI Circle rely on proactive delegation set up in advance —
+                                        RelayPay instead triggers failover reactively, only once a payment failure is
+                                        verified.</p>
+                                </div>
+                                <div class="detail-group">
+                                    <span class="detail-label">ARCHITECTURE OVERVIEW</span>
+                                    <p class="detail-val">Native Android client (Java, MVVM + Clean Architecture) backed
+                                        by a
+                                        Node.js/Express/MongoDB service layer. The backend runs a failover state machine
+                                        with
+                                        enforced transitions, a double-entry ledger using MongoDB sessions and
+                                        optimistic
+                                        locking, and a swappable bank-adapter interface currently backed by a mock
+                                        provider.</p>
+                                </div>
+                                <div class="detail-group">
+                                    <span class="detail-label">KEY FEATURES</span>
+                                    <ul class="feature-bullets">
+                                        <li>Reactive failover engine relaying a failed payment to a linked bank account
+                                            within
+                                            the user's family circle after verified failure</li>
+                                        <li>Double-entry ledger service with MongoDB session-based transactions and
+                                            optimistic
+                                            locking for consistency</li>
+                                        <li>JWT auth with refresh token rotation, OTP gating, and brute-force lockout
+                                            protection</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="project-tech-tags">
+                                <span class="mono-tag">Java (Android)</span>
+                                <span class="mono-tag">Node.js</span>
+                                <span class="mono-tag">Express</span>
+                                <span class="mono-tag">MongoDB</span>
+                                <span class="mono-tag">JWT</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://github.com/laxmangaidhankar" target="_blank" class="project-link">
+                                    View GitHub <span class="arrow">&rarr;</span>
+                                </a>
+                                <a href="https://github.com/laxmangaidhankar" target="_blank" class="project-link">
+                                    View Live <span class="arrow">&rarr;</span>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="project-row-right">
+                            <div class="browser-frame-preview">
+                                <div class="browser-bar">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="bar-url">relaypay.laxman.dev</span>
+                                </div>
+                                <img src="./images/relaypay.png" alt="RelayPay Platform Preview" loading="lazy"
+                                    class="project-img" />
+                            </div>
+                        </div>
+                    </article>
                 </div>
-
-
             </div>
         </section>
 
+        <!-- ================= TECHNICAL SKILLS ================= -->
+        <section id="skills" class="section-padding border-top">
+            <div class="section-container">
+
+                <span class="section-label">TECHNICAL SKILLS</span>
+                <h2 class="section-headline">Technologies & Tools</h2>
+
+                <div class="skills-clean-grid">
+
+                    <!-- Programming Languages -->
+                    <div class="skill-category-box reveal-element">
+                        <h3 class="category-name">Programming Languages</h3>
+                        <div class="skills-flex">
+                            <span class="mono-tag">C</span>
+                            <span class="mono-tag">C++</span>
+                            <span class="mono-tag">Java</span>
+                            <span class="mono-tag">JavaScript</span>
+                            <span class="mono-tag">Python</span>
+                            <span class="mono-tag">SQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-category-box reveal-element">
+                        <h3 class="category-name">Backend Development</h3>
+                        <div class="skills-flex">
+                            <span class="mono-tag">Node.js</span>
+                            <span class="mono-tag">Express.js</span>
+                            <span class="mono-tag">Spring Boot</span>
+                            <span class="mono-tag">REST APIs</span>
+                            <span class="mono-tag">JWT Authentication</span>
+                            <span class="mono-tag">Prisma ORM</span>
+                        </div>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="skill-category-box reveal-element">
+                        <h3 class="category-name">Frontend Development</h3>
+                        <div class="skills-flex">
+                            <span class="mono-tag">React</span>
+                            <span class="mono-tag">HTML5</span>
+                            <span class="mono-tag">CSS3</span>
+                            <span class="mono-tag">Tailwind CSS</span>
+                            <span class="mono-tag">Responsive Design</span>
+                            <span class="mono-tag">REST API Integration</span>
+                        </div>
+                    </div>
+
+                    <!-- Android -->
+                    <div class="skill-category-box reveal-element">
+                        <h3 class="category-name">Android Development</h3>
+                        <div class="skills-flex">
+                            <span class="mono-tag">Java</span>
+                            <span class="mono-tag">Android SDK</span>
+                            <span class="mono-tag">XML</span>
+                            <span class="mono-tag">MVVM</span>
+                            <span class="mono-tag">Retrofit</span>
+                            <span class="mono-tag">Firebase</span>
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="skill-category-box reveal-element">
+                        <h3 class="category-name">Databases</h3>
+                        <div class="skills-flex">
+                            <span class="mono-tag">PostgreSQL</span>
+                            <span class="mono-tag">MongoDB</span>
+                            <span class="mono-tag">Firebase Firestore</span>
+                            <span class="mono-tag">MySQL</span>
+                            <span class="mono-tag">Room Database</span>
+                            <span class="mono-tag">Database Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="skill-category-box reveal-element">
+                        <h3 class="category-name">Tools & Platforms</h3>
+                        <div class="skills-flex">
+                            <span class="mono-tag">Git</span>
+                            <span class="mono-tag">GitHub</span>
+                            <span class="mono-tag">Docker</span>
+                            <span class="mono-tag">Postman</span>
+                            <span class="mono-tag">Android Studio</span>
+                            <span class="mono-tag">VS Code</span>
+                        </div>
+                    </div>
+
+                    <!-- CS Fundamentals -->
+                    <div class="skill-category-box reveal-element">
+                        <h3 class="category-name">Computer Science Fundamentals</h3>
+                        <div class="skills-flex">
+                            <span class="mono-tag">Data Structures & Algorithms</span>
+                            <span class="mono-tag">Object-Oriented Programming</span>
+                            <span class="mono-tag">Operating Systems</span>
+                            <span class="mono-tag">Computer Networks</span>
+                            <span class="mono-tag">DBMS</span>
+                            <span class="mono-tag">Software Engineering</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- ================= EXPERIENCE & MILESTONES ================= -->
+        <section id="experience" class="section-padding border-top">
+            <div class="section-container">
+                <span class="section-label">EXPERIENCE & ACHIEVEMENTS</span>
+                <h2 class="section-headline">Hackathons & Technical Leadership</h2>
+
+                <div class="experience-list">
 
 
-        <!-- ================= EXPERIENCE ================= -->
-        <section id="experience">
+                    <div class="exp-item reveal-element">
+                        <div class="exp-left">
+                            <span class="exp-date">Jan 2026</span>
+                            <span class="exp-badge">Top 33 Finalist</span>
+                        </div>
+                        <div class="exp-right">
+                            <h3 class="exp-title">Dimension X 2026 Hackathon</h3>
+                            <p class="exp-org">GDG On Campus &bull; Sustainability Track</p>
+                            <p class="exp-desc">
+                                Shortlisted among the Top 33 out of 150+ developer teams nationwide. Developed a
+                                full-stack sustainability tracking web platform featuring real-time data telemetry.
+                            </p>
+                        </div>
+                    </div>
 
+                    <div class="exp-item reveal-element">
+                        <div class="exp-left">
+                            <span class="exp-date">Dec 2025</span>
+                            <span class="exp-badge">Top 100 Nationwide</span>
+                        </div>
+                        <div class="exp-right">
+                            <h3 class="exp-title">AWS IIT Bombay ImpactX Challenge</h3>
+                            <p class="exp-org">AWS & IIT Bombay &bull; Cloud Challenge</p>
+                            <p class="exp-desc">
+                                Selected in the Top 100 out of 900+ teams nationwide for engineering cloud-native
+                                microservices addressing social impact and scalable public infrastructure.
+                            </p>
+                        </div>
+                    </div>
 
-            <div class="experience-section">
-                <h1 class="section-title">My Experience</h1>
+                    <div class="exp-item reveal-element">
+                        <div class="exp-left">
+                            <span class="exp-date">Dec 2025</span>
+                            <span class="exp-badge">Top 12 Finalist</span>
+                        </div>
+                        <div class="exp-right">
+                            <h3 class="exp-title">Startup Smackdown Hackathon</h3>
+                            <p class="exp-org">Startup Smackdown &bull; Rapid MVP Track</p>
+                            <p class="exp-desc">
+                                Rapidly prototyped a functional MVP backend API and frontend within 24 hours, placing in
+                                the Top 12 out of 163+ competing developer teams.
+                            </p>
+                        </div>
+                    </div>
 
-                <div class="experience-cards">
-                    <div class="experience-card">
-
-                        <a href="https://github.com/laxmangaidhankar/dimensionx-hackathon.git" target="_blank"
-                            class="card-link-icon">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-
-                        <h2>Dimension X 2026 Hackathon – Top 33</h2>
-                        <p class="date">Jan 2026</p>
-                        <p class="techstack"><strong>Tech Stack:</strong> React, Node.js, Firebase, Figma</p>
-
-                        <p>
-                            Participated in the Dimension X 2026 Hackathon organized by GDG On Campus,
-                            working under the <strong>Sustainability</strong> domain and competing among
-                            <strong>150+ teams</strong>, with only 33 teams shortlisted.
-                        </p>
-
+                    <div class="exp-item reveal-element">
+                        <div class="exp-left">
+                            <span class="exp-date">Nov 2025</span>
+                            <span class="exp-badge winner">1st Position Winner</span>
+                        </div>
+                        <div class="exp-right">
+                            <h3 class="exp-title">Build for Billions Hackathon — IndiaStack</h3>
+                            <p class="exp-org">Team MarathaMinds &bull; National Competition</p>
+                            <p class="exp-desc">
+                                Secured 1st place in national competition by engineering high-concurrency public digital
+                                infrastructure backend APIs built to support high request volume under low latency
+                                requirements.
+                            </p>
+                        </div>
                     </div>
 
 
-                    <div class="experience-card">
-                        <a href="https://github.com/laxmangaidhankar/iitbombay-hackathon.git" target="_blank"
-                            class="card-link-icon">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                        <h2>IIT Bombay ImpactX Challenge – Top 100</h2>
-                        <p class="date">Dec 2025</p>
-                        <p class="techstack"><strong>Tech Stack:</strong> React, Node.js, Firebase, Figma</p>
-                        <p>
-                            Selected among the <strong>Top 100 teams out of 900+ teams</strong> in the
-                            <strong>AWS IIT Bombay ImpactX Challenge</strong>, creating innovative solutions
-                            with strong social and economic impact.
-                        </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EDUCATION ================= -->
+        <section id="education" class="section-padding border-top">
+            <div class="section-container">
+                <span class="section-label">EDUCATION</span>
+                <h2 class="section-headline">Education</h2>
+                <div class="section-container">
+                    <div class="two-col-grid">
+
+                        <!-- Education Column -->
+                        <div class="col-block reveal-element">
+                            <span class="section-label">Bachelor of Technology</span>
+
+                            <h2 class="col-title">Electronics & Telecommunication Engineering</h2>
+
+                            <div class="edu-box">
+                                <h3 class="edu-degree">Bachelor of Technology (B.Tech.)</h3>
+
+                                <p class="edu-period">
+                                    2025 &ndash; 2028 &bull; Pune Institute of Computer Technology (PICT), Pune
+                                </p>
+
+                                <p class="edu-text">
+                                    Pursuing a Bachelor's degree in Electronics and Telecommunication Engineering
+                                    while building a strong foundation in software engineering, data structures,
+                                    backend development, databases, and Android application development through
+                                    academic coursework and personal projects.
+                                </p>
+
+                                <div class="coursework-list">
+                                    <span class="mono-tag">Data Structures & Algorithms</span>
+                                    <span class="mono-tag">Java</span>
+                                    <span class="mono-tag">MERN Full Stack</span>
+                                    <span class="mono-tag">Java Full Stack Development</span>
+                                    <span class="mono-tag">Problem Solving</span>
+                                    <span class="mono-tag">Software Engineering</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-block reveal-element">
+                            <span class="section-label">Diploma</span>
+
+                            <h2 class="col-title">Diploma in Computer Engineering and Technology</h2>
+
+                            <div class="edu-box">
+                                <h3 class="edu-degree">Junior Degree</h3>
+
+                                <p class="edu-period">
+                                    2022 &ndash; 2025 &bull; ZES's Zeal Polytechnic, Pune
+                                </p>
+
+                                <p class="edu-text">
+                                    Built a strong foundation in computer programming, software development,
+                                    database management, networking, and object-oriented programming. Gained
+                                    practical experience by developing real-world applications and strengthening
+                                    problem-solving skills through hands-on projects.
+                                </p>
+
+                                <div class="coursework-list">
+                                    <span class="mono-tag">Data Structures & Algorithms</span>
+                                    <span class="mono-tag">Java</span>
+                                    <span class="mono-tag">C++</span>
+                                    <span class="mono-tag">Python</span>
+                                    <span class="mono-tag">Database Management Systems</span>
+                                    <span class="mono-tag">Operating Systems</span>
+                                    <span class="mono-tag">Computer Networks</span>
+                                    <span class="mono-tag">Object-Oriented Programming</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="experience-card">
-                        <a href="https://github.com/laxmangaidhankar/startupsmackdown-hackathon.git" target="_blank"
-                            class="card-link-icon">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                        <h2>Startup Smackdown Hackathon – Top 12</h2>
-                        <p class="date">Dec 2025</p>
-                        <p class="techstack"><strong>Tech Stack:</strong> React, Node.js, Firebase, Figma</p>
-
-                        <p>
-                            Shortlisted among the <strong>Top 12 teams out of 163+ teams</strong> in the
-                            <strong>Startup Smackdown Hackathon</strong>, working on real-world startup
-                            challenges and rapid prototyping.
-                        </p>
-                    </div>
-
-                    <div class="experience-card">
-                        <a href="https://github.com/laxmangaidhankar/buildforbillions-hackathon.git" target="_blank"
-                            class="card-link-icon">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                        <h2>Build for Billions Hackathon – Winner</h2>
-                        <p class="date">Nov 2025</p>
-                        <p class="techstack"><strong>Tech Stack:</strong> React, Node.js, Firebase, Figma</p>
-                        <p>
-                            Achieved <strong>1st position</strong> under the <strong>Track: India</strong> in the
-                            IndiaStack – Build for Billions Hackathon, representing my solo project under
-                            the team name <strong>MarathaMinds</strong>.
-                        </p>
-                    </div>
-
-
-
-
                 </div>
         </section>
 
 
+        <!-- ================= CONTACT / FOOTER ================= -->
+        <section id="contact" class="section-padding border-top">
+            <div class="section-container">
+                <div class="contact-box reveal-element">
+                    <span class="section-label">CONTACT</span>
+                    <h2 class="contact-headline">Let's build something exceptional together.</h2>
+                    <p class="contact-text">
+                        Interested in collaborating, discussing an opportunity, or simply saying hello?
+                        My inbox is always open. Let's create something meaningful together.
+                    </p>
 
-
-
-
-        <!-- ================= CONTACT ================= -->
-        <section id="contactme" class="contactme-section">
-            <div class="contactme-form">
-               <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="38678a76-467f-4a05-84d3-55241646be7e">
-
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Email" required />
-                    <textarea rows="5" name="message" placeholder="How can I help?" required></textarea>
-
-                    <button type="submit" class="submit-btn">Send Message</button>
-                    <div class="aboutme-links">
-
-                        <a href="https://github.com/laxmangaidhankar"><i class="fa-brands fa-github"></i></a>
-
-                        <a href="mailto:laxmangaidhankar44@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-
-
+                    <div class="contact-links">
+                        <a href="mailto:laxmangaidhankar44@gmail.com" class="btn btn-primary">
+                            Email Me &rarr;
+                        </a>
+                        <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank"
+                            class="btn btn-secondary">
+                            LinkedIn &rarr;
+                        </a>
+                        <a href="https://github.com/laxmangaidhankar" target="_blank" class="btn btn-secondary">
+                            GitHub &rarr;
                         </a>
 
-                        <a href="https://www.linkedin.com/in/laxmangaidhankar/"><i
-                                class="fa-brands fa-linkedin"></i></a>
                     </div>
-                     <p id="form-status">
-                Thank you for reaching out.
-            </p>
-                </form>
-            </div>
-
-            <div class="contactme-special">
-                <h1>Let's Talk</h1>
-                <h2>About Your Next Project</h2>
-                <p>
-                    I'm always open to new opportunities, collaborations, and exciting ideas.
-                    Whether you need help with <strong>frontend development</strong>,
-                    <strong>UI design</strong>, or building a complete user-focused product,
-                    feel free to reach out anytime.
-                </p>
-                <div class="contact-info">
-                    <p>
-                        <i class="fa-solid fa-envelope"></i>
-                        <a href="mailto:laxmangaidhankar44@gmail.com">laxmangaidhankar44@gmail.com</a>
-                    </p>
-                    <p>
-                        <i class="fa-solid fa-phone"></i>
-                        <a href="tel:+918855013674">+91 88550 13674</a>
-                    </p>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="footer">
+    <footer class="site-footer">
         <div class="footer-container">
-
-            <h2 class="footer-name">Laxman Gaidhankar</h2>
+            <div class="footer-left">
+                <span class="footer-brand">Laxman</span>
+                <span class="footer-copy">&copy; <span id="year"></span> Laxman. Designed and built with care.</span>
+            </div>
 
             <div class="footer-links">
+                <a href="https://github.com/laxmangaidhankar" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank">LinkedIn</a>
                 <a href="mailto:laxmangaidhankar44@gmail.com">Email</a>
-                <a href="tel:+918855013674">Phone</a>
             </div>
-
-            <div class="footer-socials">
-                <a href="https://github.com/laxmangaidhankar"><i class="fa-brands fa-github"></i></a>
-                <a href="https://leetcode.com/u/LaxmanGaidhankar/" target="_blank">
-                    <i class="fa-solid fa-code"></i>
-                </a>
-
-                <a href="https://www.linkedin.com/in/laxmangaidhankar/"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-
-            <p class="footer-copy">
-                © <span id="year"></span> Laxman Gaidhankar | All Rights Reserved
-            </p>
-
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
+        &uarr;
+    </button>
 
     <script src="script.js"></script>
 </body>

@@ -1,126 +1,181 @@
-// ===== INITIAL SETUP =====
+/* ==========================================================================
+   VERCEL / APPLE STYLE INTERACTION ENGINE
+   Developer: Laxman — Computer Engineering Student
+   ========================================================================== */
+
 document.addEventListener("DOMContentLoaded", () => {
-    setupSmoothScrolling();
-    setupScrollAnimations();
-    setupNavbarEffects();
-    activateFirstSection();
+    initScrollProgress();
+    initThemeToggle();
+    initNavbarAndScrollSpy();
+    initMobileDrawer();
+    initScrollReveal();
+    initGitHubHeatmap();
+    initBackToTop();
+    setCurrentYear();
 });
 
-// ===== FIRST SECTION ANIMATION =====
-function activateFirstSection() {
-    const first = document.querySelector("section");
-    if (!first) return;
-    first.classList.add("active");
-    animateContent(first);
+/* --------------------------------------------------------------------------
+   01. SCROLL PROGRESS BAR
+   -------------------------------------------------------------------------- */
+function initScrollProgress() {
+    const progressBar = document.getElementById("scroll-progress-bar");
+    if (!progressBar) return;
+
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        progressBar.style.width = `${Math.min(progress, 100)}%`;
+    });
 }
 
-// ===== INTERSECTION OBSERVER =====
-function setupScrollAnimations() {
-    const sections = document.querySelectorAll("section");
+/* --------------------------------------------------------------------------
+   02. THEME TOGGLE (DARK / LIGHT MODE)
+   -------------------------------------------------------------------------- */
+function initThemeToggle() {
+    const toggleBtn = document.getElementById("theme-toggle");
+    const htmlEl = document.documentElement;
+
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    htmlEl.setAttribute("data-theme", savedTheme);
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+            const currentTheme = htmlEl.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            htmlEl.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+        });
+    }
+}
+
+/* --------------------------------------------------------------------------
+   03. NAVBAR STICKY GLASS & SCROLLSPY
+   -------------------------------------------------------------------------- */
+function initNavbarAndScrollSpy() {
+    const navbar = document.getElementById("navbar");
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 30) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+
+        let currentSection = "";
+        sections.forEach(sec => {
+            const secTop = sec.offsetTop - 120;
+            const secHeight = sec.offsetHeight;
+            if (window.scrollY >= secTop && window.scrollY < secTop + secHeight) {
+                currentSection = sec.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${currentSection}`) {
+                link.classList.add("active");
+            }
+        });
+    });
+}
+
+/* --------------------------------------------------------------------------
+   04. MOBILE MENU DRAWER
+   -------------------------------------------------------------------------- */
+function initMobileDrawer() {
+    const toggleBtn = document.getElementById("mobile-toggle");
+    const drawer = document.getElementById("mobile-drawer");
+    const links = document.querySelectorAll(".mobile-nav-link");
+
+    if (!toggleBtn || !drawer) return;
+
+    function toggleMenu() {
+        toggleBtn.classList.toggle("active");
+        drawer.classList.toggle("open");
+        document.body.style.overflow = drawer.classList.contains("open") ? "hidden" : "";
+    }
+
+    toggleBtn.addEventListener("click", toggleMenu);
+    links.forEach(l => l.addEventListener("click", toggleMenu));
+}
+
+/* --------------------------------------------------------------------------
+   05. SUBTLE SCROLL REVEAL (FADE + 12PX TRANSLATE)
+   -------------------------------------------------------------------------- */
+function initScrollReveal() {
+    const elements = document.querySelectorAll(".reveal-element");
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        elements.forEach(el => el.classList.add("active"));
+        return;
+    }
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-
-            const section = entry.target;
-            section.classList.add("active");
-            animateContent(section);
-
-            // Remove active states from other sections
-            sections.forEach(s => {
-                if (s !== section) {
-                    s.classList.remove("active");
-                    resetContentAnimations(s);
-                }
-            });
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
         });
-    }, {
-        threshold: 0.5,
-        rootMargin: "-10% 0px -10% 0px"
-    });
+    }, { threshold: 0.1 });
 
-    sections.forEach(sec => observer.observe(sec));
+    elements.forEach(el => observer.observe(el));
 }
 
-// ===== ANIMATIONS =====
-function animateContent(section) {
-    section.querySelectorAll(".content-animate").forEach((el, i) => {
-        setTimeout(() => el.classList.add("show"), i * 150);
-    });
+/* --------------------------------------------------------------------------
+   06. GITHUB HEATMAP GENERATION
+   -------------------------------------------------------------------------- */
+function initGitHubHeatmap() {
+    const container = document.getElementById("github-heatmap");
+    if (!container) return;
+
+    container.innerHTML = "";
+    const totalSquares = 52 * 7;
+
+    for (let i = 0; i < totalSquares; i++) {
+        const square = document.createElement("div");
+        square.classList.add("heatmap-cell");
+
+        const rand = Math.random();
+        let level = "sq-0";
+        if (rand > 0.86) level = "sq-4";
+        else if (rand > 0.72) level = "sq-3";
+        else if (rand > 0.55) level = "sq-2";
+        else if (rand > 0.38) level = "sq-1";
+
+        square.classList.add(level);
+        container.appendChild(square);
+    }
 }
 
-function resetContentAnimations(section) {
-    section.querySelectorAll(".content-animate").forEach(el => {
-        el.classList.remove("show");
-    });
-}
+/* --------------------------------------------------------------------------
+   07. BACK TO TOP BUTTON
+   -------------------------------------------------------------------------- */
+function initBackToTop() {
+    const backBtn = document.getElementById("back-to-top");
+    if (!backBtn) return;
 
-// ===== SMOOTH SCROLLING =====
-function setupSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute("href"));
-            if (target) target.scrollIntoView({ behavior: "smooth" });
-        });
-    });
-}
-
-// ===== NAVBAR EFFECTS =====
-function setupNavbarEffects() {
-    const navbar = document.querySelector(".nav-bar");
     window.addEventListener("scroll", () => {
-        navbar.classList.toggle("scrolled", window.scrollY > 50);
+        if (window.scrollY > 400) {
+            backBtn.classList.add("visible");
+        } else {
+            backBtn.classList.remove("visible");
+        }
+    });
+
+    backBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 }
 
-// ===== KEYBOARD NAVIGATION =====
-document.addEventListener("keydown", (e) => {
-    if (["ArrowDown", "PageDown"].includes(e.key)) {
-        e.preventDefault();
-        scrollToAdjacentSection(1);
-    }
-    if (["ArrowUp", "PageUp"].includes(e.key)) {
-        e.preventDefault();
-        scrollToAdjacentSection(-1);
-    }
-});
-
-function scrollToAdjacentSection(direction) {
-    const sections = Array.from(document.querySelectorAll("section"));
-    const current = document.querySelector("section.active");
-    const index = sections.indexOf(current);
-    const nextIndex = index + direction;
-
-    if (nextIndex >= 0 && nextIndex < sections.length) {
-        sections[nextIndex].scrollIntoView({ behavior: "smooth" });
+/* --------------------------------------------------------------------------
+   08. SET CURRENT YEAR
+   -------------------------------------------------------------------------- */
+function setCurrentYear() {
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
     }
 }
-document.getElementById("form-status").style.display = "none";
-
-
-document.getElementById("contact-form").addEventListener("submit", async function(e) {
-    e.preventDefault(); // Prevent form from leaving the page
-
-    const form = e.target;
-
-    // Send form data to Web3Forms
-    let response = await fetch(form.action, {
-        method: "POST",
-        body: new FormData(form)
-    });
-
-    let statusMessage = document.getElementById("form-status");
-
-    if (response.ok) {
-        statusMessage.style.display = "block";   // Show the thank-you message
-        form.reset();                            // Clear all input fields
-    } else {
-        statusMessage.style.display = "block";
-        statusMessage.style.color = "red";
-        statusMessage.innerText = "❌ Something went wrong. Please try again.";
-    }
-});
-
-// ===== SET CURRENT YEAR =====
-document.getElementById("year").textContent = new Date().getFullYear();
