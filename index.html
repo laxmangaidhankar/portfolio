@@ -8,7 +8,7 @@
     <meta name="description"
         content="Personal portfolio of Laxman — Computer Engineering Student specializing in Backend Development, Android Development, and Scalable Systems. Targeting Software Engineering Internships at Amazon, Microsoft, JPMorgan Chase, Bank of America, BNY, Google, and Atlassian." />
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="logo.png" type="image/x-icon">
 
     <!-- Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,7 +114,7 @@
                         <div class="terminal-body">
                             <div class="terminal-line">
                                 <span class="t-prompt">system@laxman-dev:~$</span> <span class="t-cmd">curl -X GET
-                                    https://api.laxman.dev/v1/status</span>
+                                    https://api.laxmangaidhankar.me/v1/status</span>
                             </div>
                             <div class="terminal-response">
                                 {<br />
@@ -216,70 +216,6 @@
 
                 <div class="projects-list">
 
-                    <!-- Project 3: CipherVault -->
-                    <article class="project-row reveal-element">
-                        <div class="project-row-left">
-                            <div class="project-meta-tag">Security & Cryptography</div>
-                            <h3 class="project-name">CipherVault</h3>
-                            <p class="project-summary">
-                                A tokenization engine replacing sensitive PII fields with secure tokens before data
-                                enters
-                                downstream systems and reporting pipelines, with tenant-aware access isolation.
-                            </p>
-
-                            <div class="project-detail-box">
-                                <div class="detail-group">
-                                    <span class="detail-label">PROBLEM STATEMENT</span>
-                                    <p class="detail-val">Storing raw PII (account numbers, customer identity) in
-                                        application
-                                        and reporting pipelines risks exposure across institutional clients sharing the
-                                        same
-                                        multi-tenant system.</p>
-                                </div>
-                                <div class="detail-group">
-                                    <span class="detail-label">ARCHITECTURE OVERVIEW</span>
-                                    <p class="detail-val">Spring Boot service backed by PostgreSQL and JPA, using Spring
-                                        Security to enforce tenant-aware data access and a role-based detokenization
-                                        workflow
-                                        for accessing sensitive fields.</p>
-                                </div>
-                                <div class="detail-group">
-                                    <span class="detail-label">KEY FEATURES</span>
-                                    <ul class="feature-bullets">
-                                        <li>Tokenization engine replacing sensitive PII fields with secure tokens so
-                                            downstream
-                                            services operate only on tokenized data</li>
-                                        <li>Tenant-aware data access enforcing logical isolation between institutional
-                                            clients
-                                            in a shared multi-tenant architecture</li>
-                                        <li>Role-based detokenization workflow requiring reason codes and audit logging
-                                            for
-                                            every sensitive data access</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="project-tech-tags">
-                                <span class="mono-tag">Java</span>
-                                <span class="mono-tag">Spring Boot</span>
-                                <span class="mono-tag">Spring Security</span>
-                                <span class="mono-tag">PostgreSQL</span>
-                                <span class="mono-tag">JPA</span>
-                            </div>
-
-                        </div>
-
-                        <div class="project-row-right">
-                            <div class="browser-frame-preview">
-                                <div class="browser-bar">
-                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                    <span class="bar-url">ciphervault.ongoing.....</span>
-                                </div>
-                                <img src="./images/ciphervault.png" alt="CipherVault System Preview" loading="lazy"
-                                    class="project-img" />
-                            </div>
-                        </div>
-                    </article>
 
                     <article class="project-row reveal-element">
                         <div class="project-row-left">
@@ -348,84 +284,99 @@
 
 
 
+                    <!-- Project 1: CipherVault -->
 
-                    <!-- Project 1: RelayPay -->
                     <article class="project-row reveal-element">
                         <div class="project-row-left">
-                            <div class="project-meta-tag">FinTech & System Resilience</div>
-                            <h3 class="project-name">RelayPay</h3>
+                            <div class="project-meta-tag">Developer Security & Secrets Management</div>
+                            <h3 class="project-name">CipherVault</h3>
                             <p class="project-summary">
-                                A payment failover platform that reactively relays a failed transaction to a trusted
-                                family/circle member's linked bank account, verified after the failure occurs.
+                                A secure environment variable and secrets management platform that helps developers
+                                store, organize, and share sensitive project configuration such as API keys,
+                                database credentials, and environment variables.
                             </p>
+
 
                             <div class="project-detail-box">
                                 <div class="detail-group">
                                     <span class="detail-label">PROBLEM STATEMENT</span>
-                                    <p class="detail-val">Payment failures leave the payer stuck with no fallback.
-                                        Existing
-                                        approaches like NPCI UPI Circle rely on proactive delegation set up in advance —
-                                        RelayPay instead triggers failover reactively, only once a payment failure is
-                                        verified.</p>
+                                    <p class="detail-val">
+                                        Developers often store API keys, database credentials, and environment
+                                        variables in local files or share them through insecure channels. CipherVault
+                                        provides a centralized and controlled workspace for securely managing and
+                                        sharing project secrets without exposing sensitive values unnecessarily.
+                                    </p>
                                 </div>
+
                                 <div class="detail-group">
                                     <span class="detail-label">ARCHITECTURE OVERVIEW</span>
-                                    <p class="detail-val">Native Android client (Java, MVVM + Clean Architecture) backed
-                                        by a
-                                        Node.js/Express/MongoDB service layer. The backend runs a failover state machine
-                                        with
-                                        enforced transitions, a double-entry ledger using MongoDB sessions and
-                                        optimistic
-                                        locking, and a swappable bank-adapter interface currently backed by a mock
-                                        provider.</p>
+                                    <p class="detail-val">
+                                        A MERN-based web platform built with React, Node.js, Express.js, and MongoDB.
+                                        The backend provides REST APIs and Socket.io-based real-time communication,
+                                        while server-side encryption protects stored secrets. The system is designed
+                                        around team workspaces, access control, and secure secret management.
+                                    </p>
                                 </div>
+
                                 <div class="detail-group">
                                     <span class="detail-label">KEY FEATURES</span>
                                     <ul class="feature-bullets">
-                                        <li>Reactive failover engine relaying a failed payment to a linked bank account
-                                            within
-                                            the user's family circle after verified failure</li>
-                                        <li>Double-entry ledger service with MongoDB session-based transactions and
-                                            optimistic
-                                            locking for consistency</li>
-                                        <li>JWT auth with refresh token rotation, OTP gating, and brute-force lockout
-                                            protection</li>
+                                        <li>
+                                            Secure storage and organization of environment variables and sensitive
+                                            project configuration such as API keys and database URIs
+                                        </li>
+                                        <li>
+                                            Server-side encryption using Node.js crypto APIs to protect sensitive
+                                            values stored in the database
+                                        </li>
+                                        <li>
+                                            Team-based secret management with role-based access control for
+                                            controlled sharing and collaboration
+                                        </li>
+                                        <li>
+                                            Real-time updates using Socket.io for synchronized secret and workspace
+                                            changes across team members
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="project-tech-tags">
-                                <span class="mono-tag">Java (Android)</span>
+                                <span class="mono-tag">React</span>
                                 <span class="mono-tag">Node.js</span>
                                 <span class="mono-tag">Express</span>
                                 <span class="mono-tag">MongoDB</span>
-                                <span class="mono-tag">JWT</span>
+                                <span class="mono-tag">Socket.io</span>
+                                <span class="mono-tag">Crypto</span>
                             </div>
 
                             <div class="project-links">
-                                <a href="https://github.com/laxmangaidhankar/relaypay-failover-system" target="_blank"
+                                <a href="https://github.com/laxmangaidhankar/ciphervault" target="_blank"
                                     class="project-link">
                                     View GitHub <span class="arrow">&rarr;</span>
                                 </a>
-                                <a href="https://github.com/laxmangaidhankar/relaypay-failover-system" target="_blank"
-                                    class="project-link">
+                                <a href="https://ciphervault.live" target="_blank" class="project-link">
                                     View Live <span class="arrow">&rarr;</span>
                                 </a>
                             </div>
-
                         </div>
 
                         <div class="project-row-right">
                             <div class="browser-frame-preview">
                                 <div class="browser-bar">
-                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                    <span class="bar-url">relaypay.laxman.dev</span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="bar-url">ciphervault.live</span>
                                 </div>
-                                <img src="./images/relaypay.png" alt="RelayPay Platform Preview" loading="lazy"
+                                <img src="./images/ciphervault.png" alt="CipherVault Platform Preview" loading="lazy"
                                     class="project-img" />
                             </div>
                         </div>
+
+
                     </article>
+
                 </div>
             </div>
         </section>
