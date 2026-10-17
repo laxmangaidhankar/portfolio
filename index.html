@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Laxman Gaidhankar</title>
+    <title>Laxman Gaidhankar </title>
     <meta name="description"
-        content="Laxman Gaidhankar is an Electronics and Telecommunication Engineering student at PICT Pune focused on software engineering, backend development, Android, and full-stack applications." />
-    <meta name="theme-color" content="#0b0b0c" />
+        content="Laxman Gaidhankar is a backend-focused full stack engineer building software that works, scales, and lasts. Student at PICT Pune." />
+    <meta name="theme-color" content="#f7f6f1" />
 
-    <link rel="icon" href="logo.png" type="image/png" />
+    <link rel="icon" href="logo.webp" type="image/png" />
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style.css" />
@@ -26,779 +28,735 @@
 
 <body>
 
-    <!-- NAVIGATION -->
-    <header class="glass-navbar" id="navbar">
-        <div class="nav-container">
+    <!-- SCROLL PROGRESS BAR -->
+    <div id="scroll-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
 
-            <a href="#home" class="nav-logo" aria-label="Laxman home">
-                <span class="logo-text">laxman<span class="logo-dot">.</span>dev</span>
+    <!-- HEADER / NAVIGATION -->
+    <header class="site-header" id="navbar">
+        <div class="header-inner">
+            <!-- Brand Logo -->
+            <a href="#home" class="brand-logo" aria-label="Home">
+                <span>LΞX<span>.</span></span>
             </a>
 
-            <nav class="nav-links-desktop" aria-label="Main navigation">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Achievements</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <!-- Right Navigation Utilities -->
+            <nav class="nav-actions" aria-label="Header menu">
+                <button id="theme-toggle-btn" class="nav-btn" type="button" aria-label="Toggle theme">
+                    <i class="fa-solid fa-circle-half-stroke nav-icon"></i>
+                    <span>THEME</span>
+                </button>
+
+                <button id="sound-toggle-btn" class="nav-btn" type="button" aria-label="Toggle audio effects">
+                    <i class="fa-solid fa-volume-high nav-icon" id="sound-icon"></i>
+                    <span id="sound-label">SOUND</span>
+                </button>
+
+                <button id="social-modal-btn" class="nav-btn" type="button" aria-label="Open social links">
+                    <span>SOCIAL</span>
+                </button>
+
+                <button id="menu-toggle-btn" class="nav-btn menu-btn" type="button" aria-label="Open navigation menu"
+                    aria-expanded="false" aria-controls="fullscreen-menu">
+                    <span>MENU</span>
+                </button>
             </nav>
-
-            <div class="nav-actions">
-                <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark and light theme">
-                    <i class="fa-solid fa-moon moon-icon"></i>
-                    <i class="fa-solid fa-sun sun-icon"></i>
-                </button>
-
-                <a href="Laxman_Gaidhankar_PICT.pdf" download class="btn btn-primary btn-sm">
-                    Resume <i class="fa-solid fa-arrow-down"></i>
-                </a>
-
-                <button id="mobile-toggle" class="mobile-menu-btn" type="button" aria-label="Toggle mobile menu"
-                    aria-controls="mobile-drawer" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-
         </div>
     </header>
 
-    <!-- MOBILE NAVIGATION -->
-    <div class="mobile-drawer" id="mobile-drawer">
-        <div class="mobile-drawer-content">
-            <a href="#home" class="mobile-nav-link">Home</a>
-            <a href="#about" class="mobile-nav-link">About</a>
-            <a href="#projects" class="mobile-nav-link">Projects</a>
-            <a href="#skills" class="mobile-nav-link">Skills</a>
-            <a href="#experience" class="mobile-nav-link">Achievements</a>
-            <a href="#education" class="mobile-nav-link">Education</a>
-            <a href="#contact" class="mobile-nav-link">Contact</a>
+    <!-- FULLSCREEN / SLIDE MENU OVERLAY -->
+    <div class="menu-overlay" id="fullscreen-menu" aria-hidden="true">
+        <div class="menu-overlay-backdrop" id="menu-backdrop"></div>
+        <div class="menu-panel">
+            <div class="menu-header">
+                <span>LΞX<span>.</span></span>
 
-            <a href="resume.pdf" download class="btn btn-primary w-full text-center">
-                Download Resume <i class="fa-solid fa-arrow-down"></i>
-            </a>
+                <button class="close-menu-btn" id="close-menu-btn" type="button" aria-label="Close menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <nav class="menu-nav-links">
+                <a href="#home" class="menu-link"><span class="menu-idx">01</span><span>Home</span></a>
+                <a href="#about" class="menu-link"><span class="menu-idx">02</span><span>About Me</span></a>
+                <a href="#projects" class="menu-link"><span class="menu-idx">03</span><span>Featured Projects</span></a>
+                <a href="#skills" class="menu-link"><span class="menu-idx">04</span><span>Skills</span></a>
+                <a href="#achievements" class="menu-link"><span class="menu-idx">05</span><span>Achievements</span></a>
+                <a href="#education" class="menu-link"><span class="menu-idx">06</span><span>Education</span></a>
+                <a href="#contact" class="menu-link"><span class="menu-idx">07</span><span>Contact</span></a>
+            </nav>
+
+            <div class="menu-footer">
+                <div class="menu-footer-actions">
+                    <a href="Laxman_Gaidhankar_PICT.pdf" download class="btn btn-pill-dark">
+                        Download Resume <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+                <div class="menu-social-icons">
+                    <a href="https://github.com/laxmangaidhankar" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:laxmangaidhankar44@gmail.com" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOCIAL MODAL -->
+    <div class="social-modal-overlay" id="social-modal" aria-hidden="true">
+        <div class="social-modal-backdrop" id="social-backdrop"></div>
+        <div class="social-modal-card">
+            <div class="social-modal-header">
+                <h3>Connect With Me</h3>
+                <button id="close-social-btn" class="close-social-btn" type="button" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="social-modal-list">
+                <a href="https://github.com/laxmangaidhankar" target="_blank" rel="noopener noreferrer"
+                    class="social-item">
+                    <div class="social-item-left">
+                        <i class="fa-brands fa-github"></i>
+                        <div>
+                            <strong>GitHub</strong>
+                            <span>@laxmangaidhankar</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank" rel="noopener noreferrer"
+                    class="social-item">
+                    <div class="social-item-left">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <span>in/laxmangaidhankar</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="mailto:laxmangaidhankar44@gmail.com" class="social-item">
+                    <div class="social-item-left">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <span>laxmangaidhankar44@gmail.com</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            <button class="copy-email-quick-btn" id="copy-email-btn" type="button">
+                <i class="fa-regular fa-copy"></i> Copy Email Address
+            </button>
         </div>
     </div>
 
     <main>
 
-        <!-- HERO -->
+        <!-- ===================================================================
+             01. HERO SECTION
+             =================================================================== -->
         <section id="home" class="hero-section">
+            <!-- Background Giant Watermark -->
+            <div class="hero-watermark" aria-hidden="true">DEVELOPER</div>
+
             <div class="hero-container">
-
-                <h1 class="hero-headline">
-                    Building Reliable Software<br />
-                    That Solves Real Problems.
-                </h1>
-
-                <p class="hero-subheading">
-                    I'm Laxman Gaidhankar, an Electronics and Telecommunication
-                    Engineering student at PICT Pune focused on backend development,
-                    Android applications, and full-stack engineering.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">
-                        Explore Projects <i class="fa-solid fa-arrow-down"></i>
-                    </a>
-
-                    <a href="#contact" class="btn btn-secondary">
-                        Get in Touch <span class="arrow-icon">&rarr;</span>
-                    </a>
-                </div>
-
-                <!-- TERMINAL -->
-                <div class="signature-visual-wrapper reveal-element">
-                    <div class="browser-frame">
-
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
-                            </div>
-
-                            <div class="browser-title">
-                                laxman-dev &mdash; developer profile
-                            </div>
-
-                            <div class="browser-status">portfolio.json</div>
-                        </div>
-
-                        <div class="terminal-body">
-
-                            <div class="terminal-line">
-                                <span class="t-prompt">laxman@dev:~$</span>
-                                <span class="t-cmd">cat profile.json</span>
-                            </div>
-
-                            <div class="terminal-response">
-                                {<br />
-                                &nbsp;&nbsp;<span class="t-key">"name"</span>:
-                                <span class="t-str">"Laxman Gaidhankar"</span>,<br />
-
-                                &nbsp;&nbsp;<span class="t-key">"education"</span>:
-                                <span class="t-str">"B.Tech. ENTC, PICT Pune"</span>,<br />
-
-                                &nbsp;&nbsp;<span class="t-key">"focus"</span>: [
-                                <span class="t-str">"Backend Development"</span>,
-                                <span class="t-str">"Android"</span>,
-                                <span class="t-str">"Full-Stack"</span> ],<br />
-
-                                &nbsp;&nbsp;<span class="t-key">"languages"</span>: [
-                                <span class="t-str">"Java"</span>,
-                                <span class="t-str">"JavaScript"</span>,
-                                <span class="t-str">"Python"</span>,
-                                <span class="t-str">"C++"</span> ],<br />
-
-                                &nbsp;&nbsp;<span class="t-key">"tools"</span>: [
-                                <span class="t-str">"Node.js"</span>,
-                                <span class="t-str">"React"</span>,
-                                <span class="t-str">"MongoDB"</span>,
-                                <span class="t-str">"PostgreSQL"</span> ],<br />
-
-                                &nbsp;&nbsp;<span class="t-key">"currently"</span>:
-                                <span class="t-str">"Building and learning"</span><br />
-                                }
-                            </div>
-
-                            <div class="terminal-line">
-                                <span class="t-prompt">laxman@dev:~$</span>
-                                <span class="t-cursor">&block;</span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about" class="section-padding">
-            <div class="section-container">
-
-                <span class="section-label">ABOUT</span>
-
-                <div class="about-content reveal-element">
-
-                    <h2 class="about-statement">
-                        I build backend systems, full-stack applications,
-                        and practical software solutions.
-                    </h2>
-
-                    <div class="about-text-grid">
-                        <p class="about-paragraph">
-                            I'm pursuing a B.Tech. in Electronics and Telecommunication
-                            Engineering at PICT Pune, building on my diploma in Computer
-                            Engineering. My primary interest is software engineering,
-                            especially backend development, APIs, databases, and
-                            Android applications.
-                        </p>
-
-                        <p class="about-paragraph">
-                            I enjoy understanding how applications work beyond the UI:
-                            authentication, authorization, data flow, real-time
-                            communication, and secure handling of information.
-                            I strengthen these skills through projects, problem-solving,
-                            and hackathons.
-                        </p>
-                    </div>
-
-                    <div class="about-stats-row">
-
-                        <div class="stat-item">
-                            <span class="stat-num">93.83%</span>
-                            <span class="stat-lbl">Diploma Score</span>
-                        </div>
-
-                        <div class="stat-item">
-                            <span class="stat-num">150+</span>
-                            <span class="stat-lbl">LeetCode Problems</span>
-                        </div>
-
-                        <div class="stat-item">
-                            <span class="stat-num">200+</span>
-                            <span class="stat-lbl">GFG Prblems</span>
-                        </div>
-
-                        <div class="stat-item">
-                            <span class="stat-num">1400+</span>
-                            <span class="stat-lbl">CodeChef DSA Rating</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects" class="section-padding border-top">
-            <div class="section-container">
-
-                <span class="section-label">SELECTED WORK</span>
-                <h2 class="section-headline">Projects I've Built</h2>
-
-                <div class="projects-list">
-
-                    <!-- HEARTBENCH -->
-                    <article class="project-row reveal-element">
-
-                        <div class="project-row-left">
-
-                            <div class="project-meta-tag">
-                                Secure Collaboration & Project Delivery
-                            </div>
-
-                            <h3 class="project-name">HandoffHub</h3>
-
-                            <p class="project-summary">
-                                A structured project handoff platform that helps developers and
-                                clients manage milestones, review deliverables, coordinate
-                                discussions, and securely share deployment credentials in a
-                                temporary workspace.
-                            </p>
-
-                            <div class="project-detail-box">
-
-                                <div class="detail-group">
-                                    <span class="detail-label">THE PROBLEM</span>
-                                    <p class="detail-val">
-                                        Project requirements, progress updates, approvals, and
-                                        deployment credentials are often scattered across
-                                        multiple tools. HandoffHub brings these workflows into
-                                        one workspace while protecting sensitive project data
-                                        through end-to-end encryption.
-                                    </p>
-                                </div>
-
-                                <div class="detail-group">
-                                    <span class="detail-label">ARCHITECTURE</span>
-                                    <p class="detail-val">
-                                        A React-based frontend backed by Node.js and Express.js,
-                                        with MongoDB for project metadata and Redis for
-                                        temporary encrypted data storage. Socket.io enables
-                                        real-time communication, while the Web Crypto API
-                                        supports browser-side AES-256-GCM encryption and
-                                        ECDH-based key exchange.
-                                    </p>
-                                </div>
-
-                                <div class="detail-group">
-                                    <span class="detail-label">KEY FEATURES</span>
-                                    <ul class="feature-bullets">
-                                        <li>
-                                            Project overview, milestone tracking, and
-                                            approval-based deliverable reviews
-                                        </li>
-                                        <li>
-                                            End-to-end encrypted credential sharing and
-                                            real-time project discussions
-                                        </li>
-                                        <li>
-                                            Temporary project rooms with access-key
-                                            verification and JWT-based session authentication
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                            <div class="project-tech-tags">
-                                <span class="mono-tag">React</span>
-                                <span class="mono-tag">Node.js</span>
-                                <span class="mono-tag">Express.js</span>
-                                <span class="mono-tag">MongoDB</span>
-                                <span class="mono-tag">Redis</span>
-                                <span class="mono-tag">Socket.io</span>
-                                <span class="mono-tag">Web Crypto API</span>
-                            </div>
-
-                            <div class="project-links">
-                                 <a href="https://github.com/laxmangaidhankar/HandoffHub" target="_blank"
-                                    rel="noopener noreferrer" class="project-link">
-                                    View GitHub <span class="arrow">&rarr;</span>
-                                </a>
-                            </div>
-
-                        </div>
-
-                        <div class="project-row-right">
-                            <div class="browser-frame-preview">
-
-                                <div class="browser-bar">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="bar-url">HandoffHub</span>
-                                </div>
-
-                                <img src="./images/handoffhub.png" alt="HandoffHub project workspace preview"
-                                    loading="lazy" class="project-img" />
-
-                            </div>
-                        </div>
-
-                    </article>
-
-                    <!-- SAFEHOUSE -->
-                    <article class="project-row reveal-element">
-
-                        <div class="project-row-left">
-
-                            <div class="project-meta-tag">
-                                Application Security & Real-Time Collaboration
-                            </div>
-
-                            <h3 class="project-name">SafeHouse</h3>
-
-                            <p class="project-summary">
-                                An end-to-end encrypted temporary-room platform for
-                                sharing environment variables and exchanging messages
-                                in real time.
-                            </p>
-
-                            <div class="project-detail-box">
-
-                                <div class="detail-group">
-                                    <span class="detail-label">THE PROBLEM</span>
-                                    <p class="detail-val">
-                                        Sharing API keys, database credentials, and
-                                        environment files through ordinary messaging
-                                        channels can expose sensitive configuration.
-                                        SafeHouse provides temporary rooms with
-                                        controlled access and client-side encryption.
-                                    </p>
-                                </div>
-
-                                <div class="detail-group">
-                                    <span class="detail-label">ARCHITECTURE</span>
-                                    <p class="detail-val">
-                                        A React frontend with a Node.js and Express
-                                        backend, MongoDB persistence, and Socket.io
-                                        for real-time room communication. The Web
-                                        Crypto API handles ECDH P-256 key agreement
-                                        and AES-256-GCM encryption on the client.
-                                        JWT-based authentication protects authorized
-                                        API operations.
-                                    </p>
-                                </div>
-
-                                <div class="detail-group">
-                                    <span class="detail-label">KEY FEATURES</span>
-                                    <ul class="feature-bullets">
-                                        <li>
-                                            Temporary rooms for sharing environment
-                                            variables and messages
-                                        </li>
-                                        <li>
-                                            ECDH P-256 key agreement and AES-256-GCM
-                                            client-side encryption
-                                        </li>
-                                        <li>
-                                            JWT authentication and room-level
-                                            access validation
-                                        </li>
-                                        <li>
-                                            Real-time chat and room activity using
-                                            Socket.io
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                            <div class="project-tech-tags">
-                                <span class="mono-tag">React</span>
-                                <span class="mono-tag">Node.js</span>
-                                <span class="mono-tag">Express.js</span>
-                                <span class="mono-tag">MongoDB</span>
-                                <span class="mono-tag">Socket.io</span>
-                                <span class="mono-tag">JWT</span>
-                                <span class="mono-tag">Web Crypto API</span>
-                                <span class="mono-tag">ECDH P-256</span>
-                                <span class="mono-tag">AES-256-GCM</span>
-                            </div>
-
-                            <div class="project-links">
-
-                                <a href="https://github.com/laxmangaidhankar/ciphervault" target="_blank"
-                                    rel="noopener noreferrer" class="project-link">
-                                    View GitHub <span class="arrow">&rarr;</span>
-                                </a>
-
-                                <a href="https://safehouse-sigma.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                    class="project-link">
-                                    View Live <span class="arrow">&rarr;</span>
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                        <div class="project-row-right">
-                            <div class="browser-frame-preview">
-
-                                <div class="browser-bar">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="bar-url">safehouse-sigma.vercel.app</span>
-                                </div>
-
-                                <img src="./images/safehouse.png"
-                                    alt="SafeHouse encrypted collaboration platform preview" loading="lazy"
-                                    class="project-img" />
-
-                            </div>
-                        </div>
-
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section id="skills" class="section-padding border-top">
-            <div class="section-container">
-
-                <span class="section-label">TECHNICAL SKILLS</span>
-                <h2 class="section-headline">Tools of the Trade</h2>
-
-                <div class="skills-clean-grid">
-
-                    <div class="skill-category-box reveal-element">
-                        <h3 class="category-name">Languages</h3>
-                        <div class="skills-flex">
-                            <span class="mono-tag">Java</span>
-                            <span class="mono-tag">JavaScript</span>
-                            <span class="mono-tag">Python</span>
-                            <span class="mono-tag">C++</span>
-                            <span class="mono-tag">C</span>
-                            <span class="mono-tag">SQL</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-box reveal-element">
-                        <h3 class="category-name">Backend</h3>
-                        <div class="skills-flex">
-                            <span class="mono-tag">Node.js</span>
-                            <span class="mono-tag">Express.js</span>
-                            <span class="mono-tag">Spring Boot</span>
-                            <span class="mono-tag">REST APIs</span>
-                            <span class="mono-tag">JWT</span>
-                            <span class="mono-tag">Socket.io</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-box reveal-element">
-                        <h3 class="category-name">Frontend</h3>
-                        <div class="skills-flex">
-                            <span class="mono-tag">React</span>
-                            <span class="mono-tag">HTML5</span>
-                            <span class="mono-tag">CSS3</span>
-                            <span class="mono-tag">Tailwind CSS</span>
-                            <span class="mono-tag">Responsive Design</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-box reveal-element">
-                        <h3 class="category-name">Android</h3>
-                        <div class="skills-flex">
-                            <span class="mono-tag">Java</span>
-                            <span class="mono-tag">Android SDK</span>
-                            <span class="mono-tag">XML</span>
-                            <span class="mono-tag">Android Studio</span>
-                            <span class="mono-tag">Retrofit</span>
-                            <span class="mono-tag">Firebase</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-box reveal-element">
-                        <h3 class="category-name">Databases</h3>
-                        <div class="skills-flex">
-                            <span class="mono-tag">PostgreSQL</span>
-                            <span class="mono-tag">MongoDB</span>
-                            <span class="mono-tag">MySQL</span>
-                            <span class="mono-tag">Firestore</span>
-                            <span class="mono-tag">Database Design</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-box reveal-element">
-                        <h3 class="category-name">Tools & Platforms</h3>
-                        <div class="skills-flex">
-                            <span class="mono-tag">Git</span>
-                            <span class="mono-tag">GitHub</span>
-                            <span class="mono-tag">Docker</span>
-                            <span class="mono-tag">Postman</span>
-                            <span class="mono-tag">VS Code</span>
-                            <span class="mono-tag">Linux / WSL</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-box reveal-element">
-                        <h3 class="category-name">CS Fundamentals</h3>
-                        <div class="skills-flex">
-                            <span class="mono-tag">Data Structures & Algorithms</span>
-                            <span class="mono-tag">OOP</span>
-                            <span class="mono-tag">DBMS</span>
-                            <span class="mono-tag">Operating Systems</span>
-                            <span class="mono-tag">Computer Networks</span>
-                            <span class="mono-tag">Software Engineering</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ACHIEVEMENTS -->
-        <section id="experience" class="section-padding border-top">
-            <div class="section-container">
-
-                <span class="section-label">ACHIEVEMENTS</span>
-                <h2 class="section-headline">Hackathons & Recognition</h2>
-
-                <div class="experience-list">
-
-                    <div class="exp-item reveal-element">
-                        <div class="exp-left">
-                            <span class="exp-date">Nov 2025</span>
-                            <span class="exp-badge winner">1st Place</span>
-                        </div>
-
-                        <div class="exp-right">
-                            <h3 class="exp-title">
-                                Build for Billions — IndiaStack
-                            </h3>
-                            <p class="exp-org">
-                                Team MarathaMinds
-                            </p>
-                            <p class="exp-desc">
-                                Secured first place in the competition with a
-                                solution focused on digital infrastructure and
-                                backend services.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="exp-item reveal-element">
-                        <div class="exp-left">
-                            <span class="exp-date">Dec 2025</span>
-                            <span class="exp-badge">Top 12</span>
-                        </div>
-
-                        <div class="exp-right">
-                            <h3 class="exp-title">
-                                Startup Smackdown Hackathon
-                            </h3>
-                            <p class="exp-org">
-                                Rapid MVP Track
-                            </p>
-                            <p class="exp-desc">
-                                Reached the Top 12 among 163+ competing teams
-                                by developing a functional MVP under a
-                                time-constrained challenge.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="exp-item reveal-element">
-                        <div class="exp-left">
-                            <span class="exp-date">Dec 2025</span>
-                            <span class="exp-badge">Top 100</span>
-                        </div>
-
-                        <div class="exp-right">
-                            <h3 class="exp-title">
-                                AWS × IIT Bombay ImpactX
-                            </h3>
-                            <p class="exp-org">
-                                Cloud & Social Impact Challenge
-                            </p>
-                            <p class="exp-desc">
-                                Selected among the Top 100 from 900+ teams
-                                participating in the challenge.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="exp-item reveal-element">
-                        <div class="exp-left">
-                            <span class="exp-date">Jan 2026</span>
-                            <span class="exp-badge">Top 33</span>
-                        </div>
-
-                        <div class="exp-right">
-                            <h3 class="exp-title">
-                                Dimension X 2026
-                            </h3>
-                            <p class="exp-org">
-                                GDG On Campus · Sustainability Track
-                            </p>
-                            <p class="exp-desc">
-                                Reached the Top 33 among 150+ teams with a
-                                technology-driven sustainability solution.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- EDUCATION -->
-        <section id="education" class="section-padding border-top">
-            <div class="section-container">
-
-                <span class="section-label">EDUCATION</span>
-                <h2 class="section-headline">Academic Background</h2>
-
-                <div class="two-col-grid">
-
-                    <div class="col-block reveal-element">
-
-                        <span class="section-label">2025 – 2028</span>
-                        <h2 class="col-title">
-                            Electronics & Telecommunication Engineering
-                        </h2>
-
-                        <div class="edu-box">
-                            <h3 class="edu-degree">
-                                Bachelor of Technology
-                            </h3>
-
-                            <p class="edu-period">
-                                Pune Institute of Computer Technology (PICT), Pune
-                            </p>
-
-                            <p class="edu-text">
-                                Pursuing a B.Tech. while developing practical
-                                software engineering skills through programming,
-                                personal projects, and technical competitions.
-                            </p>
-
-                            <div class="coursework-list">
-                                <span class="mono-tag">Data Structures</span>
-                                <span class="mono-tag">Java</span>
-                                <span class="mono-tag">Database Systems</span>
-                                <span class="mono-tag">Software Engineering</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-block reveal-element">
-
-                        <span class="section-label">2022 – 2025</span>
-                        <h2 class="col-title">
-                            Diploma in Computer Engineering and Technology
-                        </h2>
-
-                        <div class="edu-box">
-                            <h3 class="edu-degree">
-                                Diploma in Computer Engineering
-                            </h3>
-
-                            <p class="edu-period">
-                                ZES's Zeal Polytechnic, Pune
-                            </p>
-
-                            <p class="edu-text">
-                                Graduated with 93.83%, building a strong
-                                foundation in programming, databases,
-                                object-oriented design, networking, and
-                                software development.
-                            </p>
-
-                            <div class="coursework-list">
-                                <span class="mono-tag">Java</span>
-                                <span class="mono-tag">JavaScript</span>
-                                <span class="mono-tag">Python</span>
-                                <span class="mono-tag">DBMS</span>
-                                <span class="mono-tag">Operating Systems</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section-padding border-top">
-            <div class="section-container">
-
-                <div class="contact-box reveal-element">
-
-                    <span class="section-label">CONTACT</span>
-
-                    <h2 class="contact-headline">
-                        Let's build something useful.
-                    </h2>
-
-                    <p class="contact-text">
-                        Open to connecting with developers, collaborating
-                        on projects, and exploring software engineering
-                        opportunities.
+                <!-- Left Column: Title, Subtitle, CTAs -->
+                <div class="hero-left">
+                    <h1 class="hero-headline">
+                        <span class="hero-headline-top">FULL STACK</span>
+                        <span class="hero-headline-bottom">DEVELOPER</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Backend-focused engineer building software that works, scales, and lasts.
                     </p>
 
-                    <div class="contact-links">
-
-                        <a href="mailto:laxmangaidhankar44@gmail.com" class="btn btn-primary">
-                            Email Me <i class="fa-solid fa-arrow-right"></i>
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-pill-dark">
+                            VIEW MY WORK &rarr;
                         </a>
-
-                        <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank"
-                            rel="noopener noreferrer" class="btn btn-secondary">
-                            LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <a href="Laxman_Gaidhankar_PICT.pdf" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-pill-outline">
+                            RESUME &#8599;
                         </a>
-
-                        <a href="https://github.com/laxmangaidhankar" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-secondary">
-                            GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-
                     </div>
                 </div>
+
+                <!-- Right Column: Interactive Capabilities / Specialties List -->
+
+                <div class="hero-right">
+                    <ul class="specialties-list" id="specialties-list">
+                        <li class="specialty-item active" data-specialty="backend">
+                            <span class="specialty-text">BACKEND ENGINEERING</span>
+                        </li>
+                        <li class="specialty-item" data-specialty="api">
+                            <span class="specialty-text">REST API DEVELOPMENT</span>
+                        </li>
+                        <li class="specialty-item" data-specialty="db">
+                            <span class="specialty-text">DATABASE SYSTEMS</span>
+                        </li>
+                        <li class="specialty-item" data-specialty="realtime">
+                            <span class="specialty-text">REAL-TIME SYSTEMS</span>
+                        </li>
+                        <li class="specialty-item" data-specialty="security">
+                            <span class="specialty-text">APPLICATION SECURITY</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <a href="#about" class="hero-scroll-indicator" aria-label="Scroll to about section">
+                <span class="scroll-dot"></span>
+            </a>
+        </section>
+
+        <!-- ===================================================================
+             02. ABOUT SECTION (Matches Image 2)
+             =================================================================== -->
+        <section id="about" class="section-block">
+            <div class="section-wrapper">
+
+                <!-- Section Header with Underlined Subtitle -->
+                <div class="section-heading-group">
+                    <h2 class="section-title">
+                        ABOUT <span class="highlight-orange">ME</span>
+                    </h2>
+                    <div class="section-subtitle-wrap">
+                        <p class="section-subtitle">I build software that works, scales, and lasts.</p>
+                        <div class="title-underline"></div>
+                    </div>
+                </div>
+
+                <!-- About Narrative Text -->
+                <div class="about-narrative">
+                    <p class="narrative-p">
+                        I’m an Electronics &amp; Telecommunication student at PICT Pune
+                        who learns by building and ships <strong>full-stack software</strong>,
+                        from data models and APIs to polished interfaces. My work leans
+                        <strong>backend: REST APIs, authentication, database design, and
+                            real-time systems</strong>. I’ve built <strong>SafeHouse</strong>,
+                        a temporary secret-sharing platform with client-side encryption,
+                        and <strong>HandoffHub</strong>, a project handoff platform with
+                        real-time collaboration and temporary data storage.
+                    </p>
+
+                    <p class="narrative-p">
+                        I work primarily with <strong>Java, JavaScript, TypeScript, Node.js,
+                            React, SQL, and MongoDB</strong>, and I care about the details demos
+                        skip: <strong>concurrency, access control, and reliable error
+                            handling</strong>. Beyond building projects, I’ve participated in
+                        competitive hackathons and earned recognition for my work.
+                        Right now, I’m sharpening <strong>DSA, backend architecture, and
+                            distributed systems fundamentals</strong>, while looking for
+                        <strong>software engineering internships focused on backend,
+                            platform engineering, and fintech</strong>.
+                    </p>
+                </div>
+
+
+                <!-- Metrics & Highlights Grid -->
+                <div class="about-metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">93.83%</div>
+                        <div class="metric-label">Diploma in Computer Engg.</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">1st Place</div>
+                        <div class="metric-label">Build for Billions - NITK</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">350+</div>
+                        <div class="metric-label">DSA Problems Solved</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">1400+</div>
+                        <div class="metric-label">CodeChef Rating(DSA)</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             03. FEATURED PROJECTS SECTION (Matches Image 3)
+             =================================================================== -->
+        <section id="projects" class="section-block">
+            <div class="section-wrapper">
+
+                <!-- Section Header with Underline & Carousel / Filter Controls -->
+                <div class="projects-header-row">
+                    <div class="section-heading-group">
+                        <h2 class="section-title">
+                            FEATURED <span class="highlight-orange">PROJECTS</span>
+                        </h2>
+                        <div class="section-subtitle-wrap">
+                            <p class="section-subtitle">A collection of projects that turn ideas into real, usable
+                                experiences.</p>
+                            <div class="title-underline"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right Controls: Carousel Arrows & Category Filters -->
+                    <div class="projects-controls">
+                        <!-- Navigation Arrows -->
+                        <div class="carousel-arrows">
+                            <button id="carousel-prev" class="carousel-arrow-btn" type="button"
+                                aria-label="Previous projects">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button id="carousel-next" class="carousel-arrow-btn" type="button"
+                                aria-label="Next projects">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Category Filters -->
+                        <div class="filter-pills" role="tablist" aria-label="Project categories">
+                            <button class="filter-pill active" data-filter="all" role="tab"
+                                aria-selected="true">All</button>
+
+                            <button class="filter-pill" data-filter="full-stack" role="tab"
+                                aria-selected="false">Full-Stack</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Cards Carousel Container -->
+                <div class="projects-carousel-container" id="projects-container">
+
+
+
+
+
+
+                    <!-- CARD 4: HandoffHub (Full Stack Workspace) -->
+                    <article class="project-card" data-category="full-stack">
+                        <div class="card-top-meta">
+                            <span class="card-date">OCT 2026</span>
+                            <span class="card-tag">BACKEND &amp; SECURITY</span>
+                        </div>
+
+                        <h3 class="card-title">HandoffHub</h3>
+
+                        <p class="card-description">
+                            Built a secure project handoff platform for developers and clients
+                            to manage milestones, deliverables, and credentials in temporary
+                            shared workspaces. Implemented real-time collaboration with
+                            Socket.IO, Redis-backed temporary storage, and browser-side
+                            AES-256-GCM encryption.
+                        </p>
+
+                        <div class="card-tags-cloud">
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">Express.js</span>
+                            <span class="tech-pill">MongoDB</span>
+                            <span class="tech-pill">Redis</span>
+                            <span class="tech-pill">Socket.IO</span>
+                            <span class="tech-pill">JWT</span>
+                            <span class="tech-pill">Web Crypto API</span>
+                        </div>
+
+                        <div class="card-actions">
+                            <a href="YOUR_DEPLOYED_DEMO_URL" target="_blank" rel="noopener noreferrer"
+                                class="card-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                            </a>
+                            <a href="https://github.com/laxmangaidhankar/HandoffHub" target="_blank"
+                                rel="noopener noreferrer" class="card-link">
+                                <i class="fa-brands fa-github"></i> GITHUB
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <!-- CARD 5: SafeHouse (Application Security) -->
+                    <article class="project-card" data-category="full-stack">
+                        <div class="card-top-meta">
+                            <span class="card-date">2026</span>
+                            <span class="card-tag">E2EE &amp; APPLICATION SECURITY</span>
+                        </div>
+
+                        <h3 class="card-title">SafeHouse</h3>
+
+                        <p class="card-description">
+                            Built an end-to-end encrypted temporary-room platform for sharing
+                            environment variables and private messages. Implemented ECDH P-256
+                            key exchange, client-side AES-256-GCM encryption, Socket.IO-based
+                            real-time communication, and Redis-backed ephemeral storage with
+                            automatic expiry.
+                        </p>
+
+                        <div class="card-tags-cloud">
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">Express.js</span>
+                            <span class="tech-pill">MongoDB</span>
+                            <span class="tech-pill">Redis</span>
+                            <span class="tech-pill">Socket.IO</span>
+                            <span class="tech-pill">ECDH P-256</span>
+                            <span class="tech-pill">AES-256-GCM</span>
+                            <span class="tech-pill">JWT</span>
+                        </div>
+
+                        <div class="card-actions">
+                            <a href="https://safehouse-sigma.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                class="card-link">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                            </a>
+                            <a href="https://github.com/laxmangaidhankar/ciphervault" target="_blank"
+                                rel="noopener noreferrer" class="card-link">
+                                <i class="fa-brands fa-github"></i> GITHUB
+                            </a>
+                        </div>
+                    </article>
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             04. TECHNICAL SKILLS SECTION
+             =================================================================== -->
+        <section id="skills" class="section-block">
+            <div class="section-wrapper">
+
+                <div class="section-heading-group">
+                    <h2 class="section-title">
+                        TECHNICAL <span class="highlight-orange">SKILLS</span>
+                    </h2>
+                    <div class="section-subtitle-wrap">
+                        <p class="section-subtitle">Technologies and methodologies I rely on to craft scalable systems.
+                        </p>
+                        <div class="title-underline"></div>
+                    </div>
+                </div>
+
+                <div class="skills-grid">
+
+                    <div class="skill-category-card">
+                        <div class="category-icon-title">
+                            <i class="fa-solid fa-code"></i>
+                            <h3>Languages</h3>
+                        </div>
+                        <div class="skill-pill-list">
+                            <span class="tech-pill">Java</span>
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">TypeScript</span>
+                            <span class="tech-pill">Python</span>
+
+                            <span class="tech-pill">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category-card">
+                        <div class="category-icon-title">
+                            <i class="fa-solid fa-server"></i>
+                            <h3>Backend &amp; APIs</h3>
+                        </div>
+                        <div class="skill-pill-list">
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">Express.js</span>
+                            <span class="tech-pill">RESTful APIs</span>
+                            <span class="tech-pill">Socket.io</span>
+                            <span class="tech-pill">JWT &amp; Auth</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category-card">
+                        <div class="category-icon-title">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <h3>Frontend &amp; UI</h3>
+                        </div>
+                        <div class="skill-pill-list">
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Tailwind CSS</span>
+                            <span class="tech-pill">HTML5 / CSS3</span>
+                            <span class="tech-pill">Responsive Design</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category-card">
+                        <div class="category-icon-title">
+                            <i class="fa-solid fa-database"></i>
+                            <h3>Databases &amp; Caching</h3>
+                        </div>
+                        <div class="skill-pill-list">
+                            <span class="tech-pill">PostgreSQL</span>
+                            <span class="tech-pill">MongoDB</span>
+                            <span class="tech-pill">Redis</span>
+                            <span class="tech-pill">Prisma ORM</span>
+                            <span class="tech-pill">MySQL</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skill-category-card">
+                        <div class="category-icon-title">
+                            <i class="fa-solid fa-terminal"></i>
+                            <h3>Tools &amp; DevOps</h3>
+                        </div>
+                        <div class="skill-pill-list">
+                            <span class="tech-pill">Git &amp; GitHub</span>
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">Linux / WSL</span>
+                            <span class="tech-pill">Postman</span>
+                            <span class="tech-pill">AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category-card">
+                        <div class="category-icon-title">
+                            <i class="fa-solid fa-microchip"></i>
+                            <h3>Core CS &amp; Security</h3>
+                        </div>
+                        <div class="skill-pill-list">
+                            <span class="tech-pill">Data Structures &amp; Algorithms</span>
+                            <span class="tech-pill">OOP</span>
+                            <span class="tech-pill">Operating Systems</span>
+                            <span class="tech-pill">Computer Networks</span>
+                            <span class="tech-pill">Database Fundamentals</span>
+                            <span class="tech-pill">Authentication &amp; Authorization</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             05. ACHIEVEMENTS SECTION
+             =================================================================== -->
+        <section id="achievements" class="section-block">
+            <div class="section-wrapper">
+
+                <div class="section-heading-group">
+                    <h2 class="section-title">
+                        ACHIEVEMENTS &amp; <span class="highlight-orange">RECOGNITION</span>
+                    </h2>
+                    <div class="section-subtitle-wrap">
+                        <p class="section-subtitle">Hackathon podiums, competitive tracks, and engineering milestones.
+                        </p>
+                        <div class="title-underline"></div>
+                    </div>
+                </div>
+
+                <div class="achievements-timeline">
+
+
+
+                    <div class="timeline-row">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">NOV 2025</span>
+                            <span class="timeline-badge orange">1st Place Winner</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Build for Billions — IndiaStack Hackathon</h3>
+                            <p class="timeline-subtitle">Team MarathaMinds</p>
+                            <p class="timeline-desc">
+                                Secured first place with a resilient public digital infrastructure solution utilizing
+                                IndiaStack APIs, robust concurrency controls, and real-time backend queues.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-row">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">DEC 2025</span>
+                            <span class="timeline-badge">Top 12 Finalist</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Startup Smackdown Hackathon</h3>
+                            <p class="timeline-subtitle">Rapid MVP Development Track</p>
+                            <p class="timeline-desc">
+                                Selected into the Top 12 among 163+ competing developer teams after building and
+                                pitching an MVP under a strict 36-hour sprint.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-row">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">DEC 2025</span>
+                            <span class="timeline-badge">Top 100</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">AWS &times; IIT Bombay ImpactX</h3>
+                            <p class="timeline-subtitle">Cloud Architecture &amp; Social Impact</p>
+                            <p class="timeline-desc">
+                                Selected in the top tier out of 900+ teams nationwide for developing an impactful
+                                cloud-native solution architected on AWS primitives.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-row">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">JAN 2026</span>
+                            <span class="timeline-badge">Top 33</span>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Dimension X 2026</h3>
+                            <p class="timeline-subtitle">GDG On Campus · Sustainability Track</p>
+                            <p class="timeline-desc">
+                                Emerged in Top 33 among 150+ teams with a data-driven sustainability platform featuring
+                                real-time resource telemetry and metrics aggregation.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             06. EDUCATION SECTION
+             =================================================================== -->
+        <section id="education" class="section-block">
+            <div class="section-wrapper">
+
+                <div class="section-heading-group">
+                    <h2 class="section-title">
+                        ACADEMIC <span class="highlight-orange">BACKGROUND</span>
+                    </h2>
+                    <div class="section-subtitle-wrap">
+                        <p class="section-subtitle">Formal foundation in engineering, algorithms, and computing systems.
+                        </p>
+                        <div class="title-underline"></div>
+                    </div>
+                </div>
+
+                <div class="education-grid">
+
+                    <div class="edu-card">
+                        <div class="edu-card-top">
+                            <span class="edu-years">2025 – 2028</span>
+                            <span class="edu-status-pill">Currently Enrolled</span>
+                        </div>
+                        <h3 class="edu-degree">Bachelor of Technology</h3>
+                        <h4 class="edu-major">Electronics &amp; Telecommunication Engineering</h4>
+                        <p class="edu-institution">Pune Institute of Computer Technology (PICT), Pune</p>
+                        <p class="edu-note">
+                            Strengthening computer systems, software engineering, and distributed design through
+                            intensive hands-on programming, research.
+                        </p>
+                        <div class="edu-pills">
+                            <span class="tech-pill">Data Structures</span>
+                            <span class="tech-pill">Database Systems</span>
+                            <span class="tech-pill">Computer Networks</span>
+                            <span class="tech-pill">Software Engineering</span>
+                        </div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="edu-card-top">
+                            <span class="edu-years">2022 – 2025</span>
+                            <span class="edu-status-pill score-highlight">Score: 93.83%</span>
+                        </div>
+                        <h3 class="edu-degree">Diploma in Computer Engineering</h3>
+                        <h4 class="edu-major">Computer Engineering and Technology</h4>
+                        <p class="edu-institution">ZES's Zeal Polytechnic, Pune</p>
+                        <p class="edu-note">
+                            Graduated with 93.83% aggregate, establishing a strong theoretical and practical ground in
+                            OOP, database architectures, OS fundamentals, and application development.
+                        </p>
+                        <div class="edu-pills">
+                            <span class="tech-pill">Java &amp; OOP</span>
+                            <span class="tech-pill">DBMS &amp; SQL</span>
+                            <span class="tech-pill">Operating Systems</span>
+                            <span class="tech-pill">Web Technologies</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             07. CONTACT SECTION
+             =================================================================== -->
+        <section id="contact" class="section-block">
+            <div class="section-wrapper">
+
+                <div class="contact-banner">
+                    <div class="section-heading-group text-center">
+                        <h2 class="section-title">
+                            LET'S <span class="highlight-orange">CONNECT</span>
+                        </h2>
+                        <div class="section-subtitle-wrap center-wrap">
+                            <p class="section-subtitle">Looking for SWE internships and engineering roles in fintech and
+                                platform engineering.</p>
+                            <div class="title-underline"></div>
+                        </div>
+                    </div>
+
+                    <div class="contact-cta-buttons">
+                        <a href="mailto:laxmangaidhankar44@gmail.com" class="btn btn-pill-dark">
+                            <i class="fa-solid fa-envelope"></i> Email Me &rarr;
+                        </a>
+                        <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-pill-outline">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn &#8599;
+                        </a>
+                        <a href="https://github.com/laxmangaidhankar" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-pill-outline">
+                            <i class="fa-brands fa-github"></i> GitHub &#8599;
+                        </a>
+                    </div>
+
+                    <div class="contact-email-copy-box">
+                        <span class="email-address-text">laxmangaidhankar44@gmail.com</span>
+                        <button class="copy-inline-btn" id="copy-email-inline" type="button" aria-label="Copy email">
+                            <i class="fa-regular fa-copy"></i>
+                            <span id="copy-status-text">Copy</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- ===================================================================
+         08. SITE FOOTER
+         =================================================================== -->
     <footer class="site-footer">
-        <div class="footer-container">
-
+        <div class="footer-wrapper">
             <div class="footer-left">
-                <span class="footer-brand">Laxman</span>
-                <span class="footer-copy">
-                    &copy; <span id="year"></span> Laxman Gaidhankar
-                </span>
+                <span>LΞX<span>.</span></span>
+                <span class="footer-copy">&copy; <span id="year">2026</span> Laxman Gaidhankar. All rights
+                    reserved.</span>
             </div>
 
-            <div class="footer-links">
-                <a href="https://github.com/laxmangaidhankar" target="_blank" rel="noopener noreferrer">GitHub</a>
 
-                <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank"
-                    rel="noopener noreferrer">LinkedIn</a>
 
-                <a href="mailto:laxmangaidhankar44@gmail.com">Email</a>
+            <div class="footer-right">
+                <a href="#home" class="back-to-top-link" aria-label="Back to top">
+                    <span>BACK TO TOP</span>
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
             </div>
-
         </div>
     </footer>
 
-    <!-- BACK TO TOP -->
-    <button id="back-to-top" class="back-to-top-btn" type="button" aria-label="Back to top">
-        &uarr;
-    </button>
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast-popup" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>
