@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Laxman Gaidhankar </title>
+    <title>Laxman Gaidhankar — Software Engineer | Backend &amp; Full-Stack</title>
     <meta name="description"
-        content="Laxman Gaidhankar is a backend-focused full stack engineer building software that works, scales, and lasts. Student at PICT Pune." />
-    <meta name="theme-color" content="#f7f6f1" />
+        content="Laxman Gaidhankar is a software engineer focused on backend systems, secure applications, and full-stack development. Student at PICT Pune." />
+    <meta name="theme-color" content="#fafafa" />
 
     <link rel="icon" href="logo.webp" type="image/png" />
 
@@ -16,82 +16,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
         rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- SCROLL PROGRESS BAR -->
-    <div id="scroll-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+    <!-- TOP FLOATING CONTROLS (Matching Video Layout) -->
+    <button id="theme-toggle-btn" class="floating-ctrl floating-left" type="button" aria-label="Toggle theme"
+        title="Toggle Dark / Light Theme">
+        <i class="fa-solid fa-moon" id="theme-icon"></i>
+    </button>
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="site-header" id="navbar">
-        <div class="header-inner">
-            <!-- Brand Logo -->
-            <a href="#home" class="brand-logo" aria-label="Home">
-                <span>LΞX<span>.</span></span>
-            </a>
+    <button id="menu-toggle-btn" class="floating-ctrl floating-right" type="button" aria-label="Open navigation menu"
+        aria-expanded="false" aria-controls="slide-menu">
+        <span class="hamburger-lines">
+            <span></span>
+            <span></span>
+        </span>
+    </button>
 
-            <!-- Right Navigation Utilities -->
-            <nav class="nav-actions" aria-label="Header menu">
-                <button id="theme-toggle-btn" class="nav-btn" type="button" aria-label="Toggle theme">
-                    <i class="fa-solid fa-circle-half-stroke nav-icon"></i>
-                    <span>THEME</span>
-                </button>
-
-                <button id="sound-toggle-btn" class="nav-btn" type="button" aria-label="Toggle audio effects">
-                    <i class="fa-solid fa-volume-high nav-icon" id="sound-icon"></i>
-                    <span id="sound-label">SOUND</span>
-                </button>
-
-                <button id="social-modal-btn" class="nav-btn" type="button" aria-label="Open social links">
-                    <span>SOCIAL</span>
-                </button>
-
-                <button id="menu-toggle-btn" class="nav-btn menu-btn" type="button" aria-label="Open navigation menu"
-                    aria-expanded="false" aria-controls="fullscreen-menu">
-                    <span>MENU</span>
-                </button>
-            </nav>
-        </div>
-    </header>
-
-    <!-- FULLSCREEN / SLIDE MENU OVERLAY -->
-    <div class="menu-overlay" id="fullscreen-menu" aria-hidden="true">
-        <div class="menu-overlay-backdrop" id="menu-backdrop"></div>
-        <div class="menu-panel">
-            <div class="menu-header">
-                <span>LΞX<span>.</span></span>
-
-                <button class="close-menu-btn" id="close-menu-btn" type="button" aria-label="Close menu">
+    <!-- RIGHT SLIDE-OUT MENU DRAWER -->
+    <div class="menu-overlay" id="slide-menu" aria-hidden="true">
+        <div class="menu-backdrop" id="menu-backdrop"></div>
+        <aside class="menu-drawer">
+            <div class="menu-drawer-top">
+                <span class="brand-mark">LΞX<span>.</span></span>
+                <button class="close-drawer-btn" id="close-menu-btn" type="button" aria-label="Close menu">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
-            <nav class="menu-nav-links">
-                <a href="#home" class="menu-link"><span class="menu-idx">01</span><span>Home</span></a>
-                <a href="#about" class="menu-link"><span class="menu-idx">02</span><span>About Me</span></a>
-                <a href="#projects" class="menu-link"><span class="menu-idx">03</span><span>Featured Projects</span></a>
-                <a href="#skills" class="menu-link"><span class="menu-idx">04</span><span>Skills</span></a>
-                <a href="#achievements" class="menu-link"><span class="menu-idx">05</span><span>Achievements</span></a>
-                <a href="#education" class="menu-link"><span class="menu-idx">06</span><span>Education</span></a>
-                <a href="#contact" class="menu-link"><span class="menu-idx">07</span><span>Contact</span></a>
+            <nav class="menu-nav" aria-label="Section navigation">
+                <a href="#home" class="drawer-link"><span>HOME</span><span class="idx">01</span></a>
+                <a href="#expertise" class="drawer-link"><span>EXPERTISE</span><span class="idx">02</span></a>
+                <a href="#projects" class="drawer-link"><span>PROJECTS</span><span class="idx">03</span></a>
+                <a href="#skills" class="drawer-link"><span>SKILLS</span><span class="idx">04</span></a>
+                <a href="#journey" class="drawer-link"><span>JOURNEY</span><span class="idx">05</span></a>
+                <a href="#contact" class="drawer-link"><span>CONTACT</span><span class="idx">06</span></a>
             </nav>
 
-            <div class="menu-footer">
-                <div class="menu-footer-actions">
-                    <a href="Laxman_Gaidhankar_PICT.pdf" download class="btn btn-pill-dark">
-                        Download Resume <i class="fa-solid fa-arrow-down"></i>
-                    </a>
-                </div>
-                <div class="menu-social-icons">
+            <div class="menu-drawer-bottom">
+                <a href="Laxman_Gaidhankar_PICT.pdf" download class="btn-mono-solid full-w">
+                    <i class="fa-solid fa-arrow-down"></i> Download Resume
+                </a>
+                <div class="drawer-socials">
                     <a href="https://github.com/laxmangaidhankar" target="_blank" rel="noopener noreferrer"
                         aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank" rel="noopener noreferrer"
@@ -100,656 +76,634 @@
                             class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- SOCIAL MODAL -->
-    <div class="social-modal-overlay" id="social-modal" aria-hidden="true">
-        <div class="social-modal-backdrop" id="social-backdrop"></div>
-        <div class="social-modal-card">
-            <div class="social-modal-header">
-                <h3>Connect With Me</h3>
-                <button id="close-social-btn" class="close-social-btn" type="button" aria-label="Close modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="social-modal-list">
-                <a href="https://github.com/laxmangaidhankar" target="_blank" rel="noopener noreferrer"
-                    class="social-item">
-                    <div class="social-item-left">
-                        <i class="fa-brands fa-github"></i>
-                        <div>
-                            <strong>GitHub</strong>
-                            <span>@laxmangaidhankar</span>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank" rel="noopener noreferrer"
-                    class="social-item">
-                    <div class="social-item-left">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                        <div>
-                            <strong>LinkedIn</strong>
-                            <span>in/laxmangaidhankar</span>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-                <a href="mailto:laxmangaidhankar44@gmail.com" class="social-item">
-                    <div class="social-item-left">
-                        <i class="fa-solid fa-envelope"></i>
-                        <div>
-                            <strong>Email</strong>
-                            <span>laxmangaidhankar44@gmail.com</span>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            </div>
-            <button class="copy-email-quick-btn" id="copy-email-btn" type="button">
-                <i class="fa-regular fa-copy"></i> Copy Email Address
-            </button>
-        </div>
+        </aside>
     </div>
 
     <main>
 
         <!-- ===================================================================
-             01. HERO SECTION
+             01. HERO SECTION (Orbital Tech Rings + Cycling Giant Role)
              =================================================================== -->
         <section id="home" class="hero-section">
-            <!-- Background Giant Watermark -->
-            <div class="hero-watermark" aria-hidden="true">DEVELOPER</div>
 
-            <div class="hero-container">
-                <!-- Left Column: Title, Subtitle, CTAs -->
-                <div class="hero-left">
-                    <h1 class="hero-headline">
-                        <span class="hero-headline-top">FULL STACK</span>
-                        <span class="hero-headline-bottom">DEVELOPER</span>
-                    </h1>
+            <!-- Concentric Rotating Orbital Tech Rings -->
+            <div class="orbit-stage" aria-hidden="true">
+                <div class="orbit-ring ring-outer">
+                    <div class="orbit-icon pos-1" title="Node.js"><i class="fa-brands fa-node-js"></i></div>
+                    <div class="orbit-icon pos-2" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+                    <div class="orbit-icon pos-3" title="PostgreSQL"><i class="fa-solid fa-database"></i></div>
+                    <div class="orbit-icon pos-4" title="Python"><i class="fa-brands fa-python"></i></div>
+                </div>
+                <div class="orbit-ring ring-mid">
+                    <div class="orbit-icon pos-1" title="React"><i class="fa-brands fa-react"></i></div>
+                    <div class="orbit-icon pos-2" title="Database"><i class="fa-solid fa-database"></i></div>
+                    <div class="orbit-icon pos-3" title="GitHub"><i class="fa-brands fa-github"></i></div>
+                    <div class="orbit-icon pos-4" title="Java"><i class="fa-brands fa-java"></i></div>
+                </div>
+                <div class="orbit-ring ring-inner">
+                    <div class="orbit-icon pos-1" title="Security"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="orbit-icon pos-2" title="HTML5"><i class="fa-brands fa-html5"></i></div>
+                    <div class="orbit-icon pos-3" title="Terminal"><i class="fa-solid fa-terminal"></i></div>
+                </div>
+            </div>
 
-                    <p class="hero-subtitle">
-                        Backend-focused engineer building software that works, scales, and lasts.
+            <!-- Centered Hero Content -->
+            <div class="hero-center">
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    <span>AVAILABLE FOR WORK</span>
+                </div>
+
+                <p class="hero-intro">Hello! I'm Laxman Gaidhankar, a software engineer focused on</p>
+
+                <h1 class="hero-giant-role" id="cycling-role">ENGINEER</h1>
+
+                <p class="hero-summary">
+                    I’m a software engineering student at PICT Pune building backend-focused full-stack applications.
+                    I work with REST APIs, PostgreSQL, real-time systems, and client-side encryption, with an
+                    emphasis on security, concurrency, and reliable software.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-mono-solid">
+                        <i class="fa-regular fa-envelope"></i> Let's Talk
+                    </a>
+                    <a href="Laxman_Gaidhankar_PICT.pdf" target="_blank" rel="noopener noreferrer"
+                        class="btn-mono-outline">
+                        <i class="fa-regular fa-file-lines"></i> Resume
+                    </a>
+                    <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank" rel="noopener noreferrer"
+                        class="btn-icon-sq" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/laxmangaidhankar" target="_blank" rel="noopener noreferrer"
+                        class="btn-icon-sq" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ===================================================================
+             02. WHAT I'M OFFERING (3-Column Expertise Cards)
+             =================================================================== -->
+        <section id="expertise" class="section-wrap">
+            <div class="section-split-head">
+                <div>
+                    <span class="eyebrow-line">MY EXPERTISE</span>
+                    <h2 class="section-h2">WHAT I'M<br />OFFERING</h2>
+                </div>
+                <p class="section-lead">
+                    I build practical full-stack applications with reliable backend APIs, secure data handling,
+                    thoughtful database design, and clean user interfaces.
+                </p>
+            </div>
+
+            <div class="offering-grid">
+                <article class="offering-card bracket-card">
+                    <div class="offering-graphic">
+                        <svg viewBox="0 0 120 72" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="20" y="10" width="80" height="52" rx="4" />
+                            <line x1="20" y1="22" x2="100" y2="22" />
+                            <circle cx="28" cy="16" r="1.5" fill="currentColor" />
+                            <circle cx="34" cy="16" r="1.5" fill="currentColor" />
+                            <path d="M36 36 L44 42 L36 48" stroke-linecap="round" stroke-linejoin="round" />
+                            <line x1="50" y1="48" x2="68" y2="48" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Backend &amp; API Engineering</h3>
+                    <p>
+                        Building scalable REST APIs, authentication, database schemas, and caching layers with Node.js,
+                        Express, PostgreSQL, MongoDB, and Redis.
                     </p>
+                    <span class="offering-num">01</span>
+                </article>
 
-                    <div class="hero-cta-group">
-                        <a href="#projects" class="btn btn-pill-dark">
-                            VIEW MY WORK &rarr;
-                        </a>
-                        <a href="Laxman_Gaidhankar_PICT.pdf" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-pill-outline">
-                            RESUME &#8599;
-                        </a>
+                <article class="offering-card bracket-card">
+                    <div class="offering-graphic">
+                        <svg viewBox="0 0 120 72" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M60 12 L92 24 V40 C92 53 77 61 60 65 C43 61 28 53 28 40 V24 L60 12 Z" />
+                            <rect x="49" y="34" width="22" height="16" rx="2" />
+                            <path d="M54 34 V29 C54 25.5 66 25.5 66 29 V34" />
+                        </svg>
                     </div>
-                </div>
-
-                <!-- Right Column: Interactive Capabilities / Specialties List -->
-
-                <div class="hero-right">
-                    <ul class="specialties-list" id="specialties-list">
-                        <li class="specialty-item active" data-specialty="backend">
-                            <span class="specialty-text">BACKEND ENGINEERING</span>
-                        </li>
-                        <li class="specialty-item" data-specialty="api">
-                            <span class="specialty-text">REST API DEVELOPMENT</span>
-                        </li>
-                        <li class="specialty-item" data-specialty="db">
-                            <span class="specialty-text">DATABASE SYSTEMS</span>
-                        </li>
-                        <li class="specialty-item" data-specialty="realtime">
-                            <span class="specialty-text">REAL-TIME SYSTEMS</span>
-                        </li>
-                        <li class="specialty-item" data-specialty="security">
-                            <span class="specialty-text">APPLICATION SECURITY</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- Scroll Down Indicator -->
-            <a href="#about" class="hero-scroll-indicator" aria-label="Scroll to about section">
-                <span class="scroll-dot"></span>
-            </a>
-        </section>
-
-        <!-- ===================================================================
-             02. ABOUT SECTION (Matches Image 2)
-             =================================================================== -->
-        <section id="about" class="section-block">
-            <div class="section-wrapper">
-
-                <!-- Section Header with Underlined Subtitle -->
-                <div class="section-heading-group">
-                    <h2 class="section-title">
-                        ABOUT <span class="highlight-orange">ME</span>
-                    </h2>
-                    <div class="section-subtitle-wrap">
-                        <p class="section-subtitle">I build software that works, scales, and lasts.</p>
-                        <div class="title-underline"></div>
-                    </div>
-                </div>
-
-                {/* About Narrative Text */}
-                <div class="about-narrative">
-                    <p class="narrative-p">
-                        I’m an Electronics &amp; Telecommunication student at PICT Pune
-                        who learns by building and ships <strong>full-stack software</strong>,
-                        from data models and APIs to polished interfaces. My work leans
-                        <strong>backend: REST APIs, authentication, database design, and
-                            real-time systems</strong>. I’ve built <strong>SafeHouse</strong>,
-                        an end-to-end encrypted temporary secret-sharing platform, and
-                        I’m currently developing <strong>WhisperShare</strong>, a
-                        room-based file-sharing platform with client-side encryption
-                        and secure, temporary file storage.
+                    <h3>Security &amp; Real-Time Systems</h3>
+                    <p>
+                        Designing zero-knowledge client-side encryption (AES-256-GCM, ECDH P-256), ephemeral Redis
+                        rooms, and low-latency Socket.IO pipelines.
                     </p>
+                    <span class="offering-num">02</span>
+                </article>
 
-                    <p class="narrative-p">
-                        I work primarily with <strong>Java, JavaScript, Node.js,
-                            React, SQL, and MongoDB</strong>, and I care about the details demos
-                        skip: <strong>concurrency, access control, security, and reliable error
-                            handling</strong>. Beyond building projects, I’ve participated in
-                        competitive hackathons and earned recognition for my work.
-                        Right now, I’m sharpening <strong>DSA, backend architecture, and
-                            distributed systems fundamentals</strong>, while looking for
-                        <strong>software engineering internships focused on backend,
-                            platform engineering, and fintech</strong>.
+                <article class="offering-card bracket-card">
+                    <div class="offering-graphic">
+                        <svg viewBox="0 0 120 72" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="16" y="14" width="52" height="44" rx="3" />
+                            <rect x="52" y="24" width="52" height="36" rx="3" fill="var(--bg-card)" />
+                            <line x1="60" y1="34" x2="96" y2="34" />
+                            <line x1="60" y1="42" x2="86" y2="42" />
+                            <line x1="60" y1="50" x2="78" y2="50" />
+                        </svg>
+                    </div>
+                    <h3>Full-Stack Web Applications</h3>
+                    <p>
+                        Shipping fast, accessible, and responsive web interfaces with React, Tailwind CSS, and modern
+                        JavaScript backed by dependable APIs.
+                    </p>
+                    <span class="offering-num">03</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             03. FEATURED PROJECTS (Split Layout + Browser Mockup)
+             =================================================================== -->
+        <section id="projects" class="section-wrap">
+            <div class="section-split-head">
+                <div>
+                    <span class="eyebrow-line">MY WORK</span>
+                    <h2 class="section-h2">FEATURED<br />PROJECTS</h2>
+                </div>
+                <p class="section-lead">
+                    Through these projects, I showcase my ability to build production-ready applications that are
+                    secure, scalable, and designed for real-world impact.
+                </p>
+            </div>
+
+            <div class="projects-stack">
+
+                <!-- Project 01: WhisperShare -->
+                <article class="project-showcase">
+                    <div class="project-info">
+                        <h3 class="project-name">WHISPERSHARE</h3>
+                        <p class="project-copy">
+                            An account-less, one-time file-sharing platform that encrypts files in the browser before upload.
+                            It uses AES-256-GCM with HKDF-SHA-256 for client-side encryption and stores only
+                            encrypted file data in PostgreSQL (BYTEA), alongside the metadata needed to claim
+                            a share. Shares expire automatically, and atomic claim handling prevents repeated retrieval.
+                            The server never receives the plaintext file or encryption key.
+                        </p>
+                        <div class="project-pills">
+                            <span>React.js</span>
+                            <span>Node.js</span>
+                            <span>Express.js</span>
+                            <span>PostgreSQL</span>
+                            <span>AES-256-GCM</span>
+                            <span>Web Crypto API</span>
+                        </div>
+                        <div class="project-footer-row">
+                            <div class="project-btns">
+                                <a href="https://whisper-share.vercel.app/" target="_blank"
+                                    rel="noopener noreferrer" class="btn-mono-solid sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                                </a>
+                                <a href="https://github.com/laxmangaidhankar/whisper-share" target="_blank"
+                                    rel="noopener noreferrer" class="btn-mono-outline sm">
+                                    <i class="fa-brands fa-github"></i> View Code
+                                </a>
+                            </div>
+                            <span class="project-counter">01<sub>/02</sub></span>
+                        </div>
+                    </div>
+
+                    <div class="project-mockup bracket-card">
+                        <div class="mockup-bar">
+                            <div class="mockup-dots"><span></span><span></span><span></span></div>
+                            <div class="mockup-url">whisper-share.vercel.app</div>
+                        </div>
+                          <div class="project-image-container">
+        <img
+            src="images/whisper-share.png"
+            alt="WhisperShare file-sharing platform interface"
+            loading="lazy"
+        />
+    </div>
+                    </div>
+                </article>
+
+                <!-- Project 02: SafeHouse -->
+                <article class="project-showcase">
+                    <div class="project-info">
+                        <h3 class="project-name">SAFEHOUSE</h3>
+                        <p class="project-copy">
+                            Built an end-to-end encrypted temporary-room platform for sharing environment variables and
+                            private messages. Implemented ECDH P-256 key exchange, client-side AES-256-GCM encryption,
+                            Socket.IO real-time communication, and Redis-backed ephemeral storage with automatic
+                            expiry.
+                        </p>
+                        <div class="project-pills">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Express.js</span>
+                            <span>MongoDB</span>
+                            <span>Redis</span>
+                            <span>Socket.IO</span>
+                            <span>ECDH P-256</span>
+                            <span>AES-256-GCM</span>
+                            <span>JWT</span>
+                        </div>
+                        <div class="project-footer-row">
+                            <div class="project-btns">
+                                <a href="https://safehouse-sigma.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                    class="btn-mono-solid sm">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                                </a>
+                                <a href="https://github.com/laxmangaidhankar/ciphervault" target="_blank"
+                                    rel="noopener noreferrer" class="btn-mono-outline sm">
+                                    <i class="fa-brands fa-github"></i> View Code
+                                </a>
+                            </div>
+                            <span class="project-counter">02<sub>/02</sub></span>
+                        </div>
+                    </div>
+
+                    <div class="project-mockup bracket-card">
+                        <div class="mockup-bar">
+                            <div class="mockup-dots"><span></span><span></span><span></span></div>
+                            <div class="mockup-url">safehouse-sigma.vercel.app</div>
+                        </div>
+                        <div class="project-image-container">
+        <img
+            src="images/safe-house.png"
+            alt="SadeHouse env-sharing platform interface"
+            loading="lazy"
+        />
+    </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             04. TECH STACK (WHAT I USE — Monochrome Icon Matrix)
+             =================================================================== -->
+        <section id="skills" class="section-wrap">
+            <div class="section-split-head">
+                <div>
+                    <span class="eyebrow-line">MY TECH STACK</span>
+                    <h2 class="section-h2">WHAT I<br />USE</h2>
+                </div>
+                <p class="section-lead">
+                    I utilize a focused suite of backend, frontend, database, and security technologies to build
+                    scalable, reliable digital products.
+                </p>
+            </div>
+
+            <div class="tech-matrix">
+                <div class="tech-tile" title="Java"><i class="fa-brands fa-java"></i><span>Java</span></div>
+                <div class="tech-tile" title="JavaScript"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                <div class="tech-tile" title="Python"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                <div class="tech-tile" title="Node.js"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                <div class="tech-tile" title="Express.js"><span class="mono-glyph">ex</span><span>Express.js</span></div>
+                <div class="tech-tile" title="React"><i class="fa-brands fa-react"></i><span>React</span></div>
+                <div class="tech-tile" title="PostgreSQL"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div>
+                <div class="tech-tile" title="MongoDB"><i class="fa-solid fa-leaf"></i><span>MongoDB</span></div>
+                <div class="tech-tile" title="Redis"><i class="fa-solid fa-bolt"></i><span>Redis</span></div>
+                <div class="tech-tile" title="Socket.IO"><i class="fa-solid fa-plug"></i><span>Socket.IO</span></div>
+                <div class="tech-tile" title="Tailwind CSS"><i class="fa-solid fa-wind"></i><span>Tailwind</span></div>
+                <div class="tech-tile" title="HTML5"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+                <div class="tech-tile" title="CSS3"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="tech-tile" title="JWT & Auth"><i class="fa-solid fa-key"></i><span>JWT Auth</span></div>
+                <div class="tech-tile" title="Web Crypto / AES-256"><i class="fa-solid fa-shield-halved"></i><span>AES-256</span></div>
+                <div class="tech-tile" title="Git"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+                <div class="tech-tile" title="GitHub"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+                <div class="tech-tile" title="MySQL"><i class="fa-solid fa-database"></i><span>MySQL</span></div>
+                <div class="tech-tile" title="SQL"><i class="fa-solid fa-code"></i><span>SQL</span></div>
+                <div class="tech-tile" title="Postman"><i class="fa-solid fa-paper-plane"></i><span>Postman</span></div>
+                <div class="tech-tile" title="DSA & OOP"><i class="fa-solid fa-code-branch"></i><span>DSA · 500+</span></div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             05. JOURNEY SWITCHER (ACHIEVEMENTS | EDUCATION)
+             =================================================================== -->
+        <section id="journey" class="section-wrap">
+
+            <div class="journey-switcher-wrap">
+                <div class="journey-switcher" role="tablist" aria-label="Journey view">
+                    <button class="switch-tab active" data-target="panel-achievements" type="button" role="tab"
+                        aria-selected="true">ACHIEVEMENTS</button>
+                    <button class="switch-tab" data-target="panel-education" type="button" role="tab"
+                        aria-selected="false">EDUCATION</button>
+                </div>
+            </div>
+
+            <!-- Panel 1: Achievements & Recognition -->
+            <div class="journey-panel active" id="panel-achievements">
+                <div class="section-split-head">
+                    <div>
+                        <span class="eyebrow-line">MY JOURNEY</span>
+                        <h2 class="section-h2">ACHIEVEMENTS &amp;<br />RECOGNITION</h2>
+                    </div>
+                    <p class="section-lead">
+                        Hackathon podiums, competitive engineering tracks, and milestones including 500+ DSA problems
+                        solved and a 1400+ CodeChef rating.
                     </p>
                 </div>
 
+                <div class="timeline-rows">
+                    <div class="tl-row">
+                        <div class="tl-date">Nov 2025</div>
+                        <div class="tl-card bracket-card">
+                            <div class="tl-card-head">
+                                <div>
+                                    <h3>Build for Billions — IndiaStack Hackathon</h3>
+                                    <p class="tl-sub">Team MarathaMinds · NITK</p>
+                                </div>
+                                <span class="tl-badge solid">1st Place Winner</span>
+                            </div>
+                            <ul class="tl-bullets">
+                                <li>Secured first place with a resilient public digital infrastructure solution utilizing IndiaStack APIs.</li>
+                                <li>Engineered robust concurrency controls and real-time backend queues for high-throughput reliability.</li>
+                            </ul>
+                            <div class="project-pills">
+                                <span>IndiaStack APIs</span><span>Backend Queues</span><span>Concurrency</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Metrics & Highlights Grid -->
-                <div class="about-metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-value">93.83%</div>
-                        <div class="metric-label">Diploma in Computer Engg.</div>
+                    <div class="tl-row">
+                        <div class="tl-date">Dec 2025</div>
+                        <div class="tl-card bracket-card">
+                            <div class="tl-card-head">
+                                <div>
+                                    <h3>Startup Smackdown Hackathon</h3>
+                                    <p class="tl-sub">Rapid MVP Development Track</p>
+                                </div>
+                                <span class="tl-badge">Top 12 Finalist</span>
+                            </div>
+                            <ul class="tl-bullets">
+                                <li>Selected into the Top 12 among 163+ competing developer teams after a strict 36-hour sprint.</li>
+                                <li>Architected and pitched a complete working full-stack MVP under tight time constraints.</li>
+                            </ul>
+                            <div class="project-pills">
+                                <span>Full-Stack MVP</span><span>36-Hour Sprint</span><span>Product Pitch</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="metric-card">
-                        <div class="metric-value">1st Place</div>
-                        <div class="metric-label">Build for Billions - NITK</div>
+
+                    <div class="tl-row">
+                        <div class="tl-date">Dec 2025</div>
+                        <div class="tl-card bracket-card">
+                            <div class="tl-card-head">
+                                <div>
+                                    <h3>AWS &times; IIT Bombay ImpactX</h3>
+                                    <p class="tl-sub">Cloud Architecture &amp; Social Impact</p>
+                                </div>
+                                <span class="tl-badge">Top 100 / 900+</span>
+                            </div>
+                            <ul class="tl-bullets">
+                                <li>Selected in the top tier out of 900+ teams nationwide for a cloud-native social impact solution.</li>
+                            </ul>
+                            <div class="project-pills">
+                                <span>AWS Primitives</span><span>Cloud Architecture</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="metric-card">
-                        <div class="metric-value">350+</div>
-                        <div class="metric-label">DSA Problems Solved</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">1400+</div>
-                        <div class="metric-label">CodeChef Rating(DSA)</div>
+
+                    <div class="tl-row">
+                        <div class="tl-date">Jan 2026</div>
+                        <div class="tl-card bracket-card">
+                            <div class="tl-card-head">
+                                <div>
+                                    <h3>Dimension X 2026</h3>
+                                    <p class="tl-sub">GDG On Campus · Sustainability Track</p>
+                                </div>
+                                <span class="tl-badge">Top 33 / 150+</span>
+                            </div>
+                            <ul class="tl-bullets">
+                                <li>Emerged in Top 33 among 150+ teams with a data-driven sustainability platform featuring real-time resource telemetry.</li>
+                            </ul>
+                            <div class="project-pills">
+                                <span>Real-Time Telemetry</span><span>Metrics Aggregation</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
+
+            <!-- Panel 2: Education & Academics -->
+            <div class="journey-panel" id="panel-education">
+                <div class="section-split-head">
+                    <div>
+                        <span class="eyebrow-line">MY JOURNEY</span>
+                        <h2 class="section-h2">EDUCATION &amp;<br />ACADEMICS</h2>
+                    </div>
+                    <p class="section-lead">
+                        My academic background, highlighting the foundational knowledge and coursework that shapes my
+                        approach to software engineering.
+                    </p>
+                </div>
+
+                <div class="timeline-rows">
+                    <div class="tl-row">
+                        <div class="tl-date">2025 – 2028</div>
+                        <div class="tl-card bracket-card">
+                            <div class="tl-card-head">
+                                <div>
+                                    <h3>Bachelor of Technology — Electronics &amp; Telecommunication</h3>
+                                    <p class="tl-sub">Pune Institute of Computer Technology (PICT), Pune · Full-time</p>
+                                </div>
+                                <span class="tl-badge solid">Currently Enrolled</span>
+                            </div>
+                            <ul class="tl-bullets">
+                                <li>Strengthening computer systems, software engineering, and distributed design through intensive hands-on programming and research.</li>
+                                <li>Core focus: Data Structures, Database Systems, Computer Networks, Software Engineering, and DSA (500+ problems, 1400+ CodeChef rating).</li>
+                            </ul>
+                            <div class="project-pills">
+                                <span>Data Structures</span><span>Database Systems</span><span>Computer Networks</span><span>Software Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tl-row">
+                        <div class="tl-date">2022 – 2025</div>
+                        <div class="tl-card bracket-card">
+                            <div class="tl-card-head">
+                                <div>
+                                    <h3>Diploma in Computer Engineering</h3>
+                                    <p class="tl-sub">ZES's Zeal Polytechnic, Pune · Full-time</p>
+                                </div>
+                                <span class="tl-badge solid">Score: 93.83%</span>
+                            </div>
+                            <ul class="tl-bullets">
+                                <li>Graduated with 93.83% aggregate, establishing a strong theoretical and practical foundation in OOP, DBMS, OS fundamentals, and web development.</li>
+                            </ul>
+                            <div class="project-pills">
+                                <span>Java &amp; OOP</span><span>DBMS &amp; SQL</span><span>Operating Systems</span><span>Web Technologies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- ===================================================================
-             03. FEATURED PROJECTS SECTION (Matches Image 3)
+             06. BENTO CONTACT HUB (Matching Video Footer Bento Grid)
              =================================================================== -->
-        <section id="projects" class="section-block">
-            <div class="section-wrapper">
+      <section id="contact" class="section-wrap contact-section">
+    <div class="bento-grid">
 
-                <!-- Section Header with Underline & Carousel / Filter Controls -->
-                <div class="projects-header-row">
-                    <div class="section-heading-group">
-                        <h2 class="section-title">
-                            FEATURED <span class="highlight-orange">PROJECTS</span>
-                        </h2>
-                        <div class="section-subtitle-wrap">
-                            <p class="section-subtitle">A collection of projects that turn ideas into real, usable
-                                experiences.</p>
-                            <div class="title-underline"></div>
-                        </div>
-                    </div>
+        <!-- Tile 1: Profile & Name -->
+    
+<div class="bento-card bento-profile bracket-card">
+    <div class="bento-top-label">GET IN<br />TOUCH</div>
 
-                    <!-- Right Controls: Carousel Arrows & Category Filters -->
-                    <div class="projects-controls">
-                        <!-- Navigation Arrows -->
-                        <div class="carousel-arrows">
-                            <button id="carousel-prev" class="carousel-arrow-btn" type="button"
-                                aria-label="Previous projects">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </button>
-                            <button id="carousel-next" class="carousel-arrow-btn" type="button"
-                                aria-label="Next projects">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </button>
-                        </div>
+  
+    <div class="bento-monogram-box">
+        <img
+            src="https://github.com/laxmangaidhankar.png"
+            alt="Laxman Gaidhankar"
+            class="profile-photo"
+        />
+        <span class="monogram-sub">PICT PUNE · INDIA</span>
+    </div>
+</div>
 
-                        <!-- Category Filters -->
-                        <div class="filter-pills" role="tablist" aria-label="Project categories">
-                            <button class="filter-pill active" data-filter="all" role="tab"
-                                aria-selected="true">All</button>
+        <!-- Tile 2: Email Copy -->
+      
+<!-- Tile: Email -->
+<div class="bento-card bento-email">
 
-                            <button class="filter-pill" data-filter="full-stack" role="tab"
-                                aria-selected="false">Full-Stack</button>
+    <div class="profiles-heading">
+        <span class="mono">GET IN TOUCH</span>
+    </div>
 
-                        </div>
-                    </div>
-                </div>
+    <div class="email-content">
+        <a href="mailto:laxmangaidhankar44@gmail.com"
+           class="email-address">
+            laxmangaidhankar44@gmail.com
+        </a>
 
-                <!-- Projects Cards Carousel Container -->
-                <div class="projects-carousel-container" id="projects-container">
+        <button id="copy-email-btn"
+                class="bento-copy-btn"
+                type="button"
+                aria-label="Copy email address">
+            <i class="fa-regular fa-copy"></i>
+        </button>
+    </div>
 
+</div>
 
+        <!-- Tile 3: LinkedIn -->
+ 
+<!-- Tile 3: Coding Profiles -->
+<div class="bento-card bento-linkedin">
 
+    <div class="profiles-heading">
+        <span class="mono">FIND ME ONLINE</span>
+    </div>
 
+    <div class="coding-profiles">
 
+      <a href="https://www.linkedin.com/in/laxmangaidhankar/"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="LinkedIn">
+    <i class="fa-brands fa-linkedin"></i>
+</a>
 
-                    <!-- CARD 4: WhisperShare (E2EE File Sharing) -->
-                    <article class="project-card" data-category="full-stack">
-                        <div class="card-top-meta">
-                            <span class="card-date">OCT 2026 – PRESENT</span>
-                            <span class="card-tag">BACKEND &amp; SECURITY</span>
-                        </div>
+      <a href="https://x.com/LGaidhankar"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="X">
+    <i class="fa-brands fa-x-twitter"></i>
+</a>
+        <a href="https://leetcode.com/u/laxmangaidhankar/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="LeetCode">
+            <img src="https://cdn.simpleicons.org/leetcode/232332"
+                 alt="LeetCode">
+        </a>
 
-                        <h3 class="card-title">WhisperShare</h3>
+        <a href="https://www.geeksforgeeks.org/user/laxmangaidhankar/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="GeeksforGeeks">
+            <img src="https://cdn.simpleicons.org/geeksforgeeks/232332"
+                 alt="GeeksforGeeks">
+        </a>
 
-                        <p class="card-description">
-                            Building an end-to-end encrypted, room-based file-sharing platform
-                            that enables users to securely share multiple files through unique
-                            Room IDs and Access Keys without requiring user accounts.
-                            Implementing browser-side AES-256-GCM encryption, AWS S3-based
-                            encrypted file storage, and Redis-backed temporary room management,
-                            ensuring plaintext files and encryption keys never reach the backend.
-                        </p>
+    </div>
 
-                        <div class="card-tags-cloud">
-                            <span class="tech-pill">React.js</span>
-                            <span class="tech-pill">Node.js</span>
-                            <span class="tech-pill">Express.js</span>
-                            <span class="tech-pill">PostgreSQL</span>
-                            <span class="tech-pill">Redis</span>
-                            <span class="tech-pill">AWS S3</span>
-                            <span class="tech-pill">AES-256-GCM</span>
-                            <span class="tech-pill">Web Crypto API</span>
-                        </div>
-
-                        <div class="card-actions">
-                            <a href="https://github.com/laxmangaidhankar/whisper-share" target="_blank"
-                                rel="noopener noreferrer" class="card-link">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
-                            </a>
-                            <a href="https://github.com/laxmangaidhankar/whisper-share" target="_blank"
-                                rel="noopener noreferrer" class="card-link">
-                                <i class="fa-brands fa-github"></i> GITHUB
-                            </a>
-                        </div>
-                    </article>
+</div>
 
 
-                    <!-- CARD 5: SafeHouse (Application Security) -->
-                    <article class="project-card" data-category="full-stack">
-                        <div class="card-top-meta">
-                            <span class="card-date">2026</span>
-                            <span class="card-tag">E2EE &amp; APPLICATION SECURITY</span>
-                        </div>
+       
+<!-- Tile 4: GitHub Contribution Graph -->
+<div class="bento-card bento-github">
+    <div class="gh-header">
+        <div>
+            <span class="mono">CONTRIBUTIONS</span>
+        </div>
+        <a href="https://github.com/laxmangaidhankar"
+           target="_blank"
+           rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+    </div>
 
-                        <h3 class="card-title">SafeHouse</h3>
+    <div class="gh-graph">
+        <img
+            src="https://ghchart.rshah.org/232332/laxmangaidhankar"
+            alt="GitHub contribution graph"
+            loading="lazy"
+        />
+    </div>
 
-                        <p class="card-description">
-                            Built an end-to-end encrypted temporary-room platform for sharing
-                            environment variables and private messages. Implemented ECDH P-256
-                            key exchange, client-side AES-256-GCM encryption, Socket.IO-based
-                            real-time communication, and Redis-backed ephemeral storage with
-                            automatic expiry.
-                        </p>
-
-                        <div class="card-tags-cloud">
-                            <span class="tech-pill">React</span>
-                            <span class="tech-pill">Node.js</span>
-                            <span class="tech-pill">Express.js</span>
-                            <span class="tech-pill">MongoDB</span>
-                            <span class="tech-pill">Redis</span>
-                            <span class="tech-pill">Socket.IO</span>
-                            <span class="tech-pill">ECDH P-256</span>
-                            <span class="tech-pill">AES-256-GCM</span>
-                            <span class="tech-pill">JWT</span>
-                        </div>
-
-                        <div class="card-actions">
-                            <a href="https://safehouse-sigma.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                class="card-link">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
-                            </a>
-                            <a href="https://github.com/laxmangaidhankar/ciphervault" target="_blank"
-                                rel="noopener noreferrer" class="card-link">
-                                <i class="fa-brands fa-github"></i> GITHUB
-                            </a>
-                        </div>
-                    </article>
+    <div class="gh-footer">
+        <span class="mono">LESS TALK. MORE CODE.</span>
+        <span class="mono">GITHUB ↗</span>
+    </div>
+</div>
 
 
-                </div>
-
+        <!-- Tile 5: Developer Stats & Achievements -->
+        <div class="bento-card bento-qr">
+            <div class="dot-matrix" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
             </div>
-        </section>
 
-        <!-- ===================================================================
-             04. TECHNICAL SKILLS SECTION
-             =================================================================== -->
-        <section id="skills" class="section-block">
-            <div class="section-wrapper">
-
-                <div class="section-heading-group">
-                    <h2 class="section-title">
-                        TECHNICAL <span class="highlight-orange">SKILLS</span>
-                    </h2>
-                    <div class="section-subtitle-wrap">
-                        <p class="section-subtitle">Technologies and methodologies I rely on to craft scalable systems.
-                        </p>
-                        <div class="title-underline"></div>
-                    </div>
-                </div>
-
-                <div class="skills-grid">
-
-                    <div class="skill-category-card">
-                        <div class="category-icon-title">
-                            <i class="fa-solid fa-code"></i>
-                            <h3>Languages</h3>
-                        </div>
-                        <div class="skill-pill-list">
-                            <span class="tech-pill">Java</span>
-                            <span class="tech-pill">JavaScript</span>
-                            <span class="tech-pill">Python</span>
-
-                            <span class="tech-pill">SQL</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card">
-                        <div class="category-icon-title">
-                            <i class="fa-solid fa-server"></i>
-                            <h3>Backend &amp; APIs</h3>
-                        </div>
-                        <div class="skill-pill-list">
-                            <span class="tech-pill">Node.js</span>
-                            <span class="tech-pill">Express.js</span>
-                            <span class="tech-pill">RESTful APIs</span>
-                            <span class="tech-pill">Socket.io</span>
-                            <span class="tech-pill">JWT &amp; Auth</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card">
-                        <div class="category-icon-title">
-                            <i class="fa-solid fa-layer-group"></i>
-                            <h3>Frontend &amp; UI</h3>
-                        </div>
-                        <div class="skill-pill-list">
-                            <span class="tech-pill">React</span>
-                            <span class="tech-pill">Tailwind CSS</span>
-                            <span class="tech-pill">HTML5 / CSS3</span>
-                            <span class="tech-pill">Responsive Design</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card">
-                        <div class="category-icon-title">
-                            <i class="fa-solid fa-database"></i>
-                            <h3>Databases &amp; Caching</h3>
-                        </div>
-                        <div class="skill-pill-list">
-                            <span class="tech-pill">PostgreSQL</span>
-                            <span class="tech-pill">MongoDB</span>
-                            <span class="tech-pill">Redis</span>
-                        </div>
-                    </div>
-
-
-
-                    <div class="skill-category-card">
-                        <div class="category-icon-title">
-                            <i class="fa-solid fa-terminal"></i>
-                            <h3>Tools</h3>
-                        </div>
-                        <div class="skill-pill-list">
-                            <span class="tech-pill">Git &amp; GitHub</span>
-                            <span class="tech-pill">Postman</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category-card">
-                        <div class="category-icon-title">
-                            <i class="fa-solid fa-microchip"></i>
-                            <h3>Core CS &amp; Security</h3>
-                        </div>
-                        <div class="skill-pill-list">
-                            <span class="tech-pill">Data Structures &amp; Algorithms</span>
-                            <span class="tech-pill">OOP</span>
-                            <span class="tech-pill">Operating Systems</span>
-                            <span class="tech-pill">Computer Networks</span>
-                            <span class="tech-pill">Database Fundamentals</span>
-                            <span class="tech-pill">Authentication &amp; Authorization</span>
-                        </div>
-                    </div>
-
-
-                </div>
-
+            <div class="qr-meta">
+                <span class="mono">500+ DSA · 1400+ CODECHEF</span>
+                <span>GFG Institute Rank #310</span>
+                <span>NITK Build for Billions Winner</span>
             </div>
-        </section>
+        </div>
 
-        <!-- ===================================================================
-             05. ACHIEVEMENTS SECTION
-             =================================================================== -->
-        <section id="achievements" class="section-block">
-            <div class="section-wrapper">
+        <!-- Tile 6: Closing Tagline -->
+        <div class="bento-card bento-tagline">
+            <span class="brand-mark">LΞX<span>.</span></span>
+            <p>
+                Let's connect and build something<br />
+                meaningful together.
+            </p>
+        </div>
 
-                <div class="section-heading-group">
-                    <h2 class="section-title">
-                        ACHIEVEMENTS &amp; <span class="highlight-orange">RECOGNITION</span>
-                    </h2>
-                    <div class="section-subtitle-wrap">
-                        <p class="section-subtitle">Hackathon podiums, competitive tracks, and engineering milestones.
-                        </p>
-                        <div class="title-underline"></div>
-                    </div>
-                </div>
+    </div>
 
-                <div class="achievements-timeline">
+    <!-- Footer -->
+    <footer class="mini-footer">
+        <span>
+            &copy; <span id="year"></span> Laxman Gaidhankar
+        </span>
+        <span class="mono">DESIGNED &amp; BUILT WITH PURPOSE.</span>
+    </footer>
+</section>
 
-
-
-                    <div class="timeline-row">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">NOV 2025</span>
-                            <span class="timeline-badge orange">1st Place Winner</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Build for Billions — IndiaStack Hackathon</h3>
-                            <p class="timeline-subtitle">Team MarathaMinds</p>
-                            <p class="timeline-desc">
-                                Secured first place with a resilient public digital infrastructure solution utilizing
-                                IndiaStack APIs, robust concurrency controls, and real-time backend queues.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-row">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">DEC 2025</span>
-                            <span class="timeline-badge">Top 12 Finalist</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Startup Smackdown Hackathon</h3>
-                            <p class="timeline-subtitle">Rapid MVP Development Track</p>
-                            <p class="timeline-desc">
-                                Selected into the Top 12 among 163+ competing developer teams after building and
-                                pitching an MVP under a strict 36-hour sprint.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-row">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">DEC 2025</span>
-                            <span class="timeline-badge">Top 100</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">AWS &times; IIT Bombay ImpactX</h3>
-                            <p class="timeline-subtitle">Cloud Architecture &amp; Social Impact</p>
-                            <p class="timeline-desc">
-                                Selected in the top tier out of 900+ teams nationwide for developing an impactful
-                                cloud-native solution architected on AWS primitives.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-row">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">JAN 2026</span>
-                            <span class="timeline-badge">Top 33</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h3 class="timeline-title">Dimension X 2026</h3>
-                            <p class="timeline-subtitle">GDG On Campus · Sustainability Track</p>
-                            <p class="timeline-desc">
-                                Emerged in Top 33 among 150+ teams with a data-driven sustainability platform featuring
-                                real-time resource telemetry and metrics aggregation.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ===================================================================
-             06. EDUCATION SECTION
-             =================================================================== -->
-        <section id="education" class="section-block">
-            <div class="section-wrapper">
-
-                <div class="section-heading-group">
-                    <h2 class="section-title">
-                        ACADEMIC <span class="highlight-orange">BACKGROUND</span>
-                    </h2>
-                    <div class="section-subtitle-wrap">
-                        <p class="section-subtitle">Formal foundation in engineering, algorithms, and computing systems.
-                        </p>
-                        <div class="title-underline"></div>
-                    </div>
-                </div>
-
-                <div class="education-grid">
-
-                    <div class="edu-card">
-                        <div class="edu-card-top">
-                            <span class="edu-years">2025 – 2028</span>
-                            <span class="edu-status-pill">Currently Enrolled</span>
-                        </div>
-                        <h3 class="edu-degree">Bachelor of Technology</h3>
-                        <h4 class="edu-major">Electronics &amp; Telecommunication Engineering</h4>
-                        <p class="edu-institution">Pune Institute of Computer Technology (PICT), Pune</p>
-                        <p class="edu-note">
-                            Strengthening computer systems, software engineering, and distributed design through
-                            intensive hands-on programming, research.
-                        </p>
-                        <div class="edu-pills">
-                            <span class="tech-pill">Data Structures</span>
-                            <span class="tech-pill">Database Systems</span>
-                            <span class="tech-pill">Computer Networks</span>
-                            <span class="tech-pill">Software Engineering</span>
-                        </div>
-                    </div>
-
-                    <div class="edu-card">
-                        <div class="edu-card-top">
-                            <span class="edu-years">2022 – 2025</span>
-                            <span class="edu-status-pill score-highlight">Score: 93.83%</span>
-                        </div>
-                        <h3 class="edu-degree">Diploma in Computer Engineering</h3>
-                        <h4 class="edu-major">Computer Engineering and Technology</h4>
-                        <p class="edu-institution">ZES's Zeal Polytechnic, Pune</p>
-                        <p class="edu-note">
-                            Graduated with 93.83% aggregate, establishing a strong theoretical and practical ground in
-                            OOP, database architectures, OS fundamentals, and application development.
-                        </p>
-                        <div class="edu-pills">
-                            <span class="tech-pill">Java &amp; OOP</span>
-                            <span class="tech-pill">DBMS &amp; SQL</span>
-                            <span class="tech-pill">Operating Systems</span>
-                            <span class="tech-pill">Web Technologies</span>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ===================================================================
-             07. CONTACT SECTION
-             =================================================================== -->
-        <section id="contact" class="section-block">
-            <div class="section-wrapper">
-
-                <div class="contact-banner">
-                    <div class="section-heading-group text-center">
-                        <h2 class="section-title">
-                            LET'S <span class="highlight-orange">CONNECT</span>
-                        </h2>
-                        <div class="section-subtitle-wrap center-wrap">
-                            <p class="section-subtitle">Looking for SWE internships and engineering roles in fintech and
-                                platform engineering.</p>
-                            <div class="title-underline"></div>
-                        </div>
-                    </div>
-
-                    <div class="contact-cta-buttons">
-                        <a href="mailto:laxmangaidhankar44@gmail.com" class="btn btn-pill-dark">
-                            <i class="fa-solid fa-envelope"></i> Email Me &rarr;
-                        </a>
-                        <a href="https://www.linkedin.com/in/laxmangaidhankar/" target="_blank"
-                            rel="noopener noreferrer" class="btn btn-pill-outline">
-                            <i class="fa-brands fa-linkedin"></i> LinkedIn &#8599;
-                        </a>
-                        <a href="https://github.com/laxmangaidhankar" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-pill-outline">
-                            <i class="fa-brands fa-github"></i> GitHub &#8599;
-                        </a>
-                    </div>
-
-                    <div class="contact-email-copy-box">
-                        <span class="email-address-text">laxmangaidhankar44@gmail.com</span>
-                        <button class="copy-inline-btn" id="copy-email-inline" type="button" aria-label="Copy email">
-                            <i class="fa-regular fa-copy"></i>
-                            <span id="copy-status-text">Copy</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+<script>
+    // Automatically update copyright year
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
 
     </main>
 
-    <!-- ===================================================================
-         08. SITE FOOTER
-         =================================================================== -->
-    <footer class="site-footer">
-        <div class="footer-wrapper">
-            <div class="footer-left">
-                <span>LΞX<span>.</span></span>
-                <span class="footer-copy">&copy; <span id="year">2026</span> Laxman Gaidhankar. All rights
-                    reserved.</span>
-            </div>
-
-
-
-            <div class="footer-right">
-                <a href="#home" class="back-to-top-link" aria-label="Back to top">
-                    <span>BACK TO TOP</span>
-                    <i class="fa-solid fa-arrow-up"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- TOAST NOTIFICATION -->
+    <!-- TOAST -->
     <div id="toast" class="toast-popup" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
